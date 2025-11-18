@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ export default function EmployeesHero() {
         <img
           src="/images/service.jpg"
           alt="Hero"
-          className="object-cover opacity-20"
+          className="object-cover opacity-20 w-full h-auto"
         />
       </div>
 
