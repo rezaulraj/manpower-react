@@ -5,17 +5,17 @@ const reviews = [
   {
     id: 1,
     text: "Manpower Network has been a game-changer for our hiring process. They consistently deliver high-quality candidates who fit both the skill requirements and our company culture. Their professionalism and speed are unmatched.",
-    author: "Employer – American Express",
+    author: "Employer – Contraction Industry",
   },
   {
     id: 2,
     text: "We needed to scale our workforce quickly for a major project, and Manpower Network delivered exactly what we needed. The team's efficiency and understanding of our industry made all the difference.",
-    author: "Employer – Google",
+    author: "Employer – Agreculture Industry",
   },
   {
     id: 3,
     text: "Partnering with Manpower Network has significantly improved our recruitment strategy. Their ability to source top-tier talent, even for niche roles, has given us a competitive advantage in the market.",
-    author: "Employer – Microsoft",
+    author: "Employer – Wherehouse",
   },
 ];
 
@@ -117,7 +117,7 @@ const WhyOurCustomers = () => {
           </motion.div>
 
           <motion.div
-            className="bg-[#201D1F] p-8 rounded-lg shadow-lg h-full min-h-[300px] relative"
+            className="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 p-8 rounded-lg shadow-lg h-full min-h-[300px] relative"
             variants={itemVariants}
           >
             <AnimatePresence mode="wait">
@@ -132,13 +132,13 @@ const WhyOurCustomers = () => {
               >
                 <div className="mb-8">
                   <motion.div
-                    className="w-12 h-1 bg-gray-300 mb-6"
+                    className="w-12 h-1 bg-gray-700 mb-6"
                     initial={{ width: 0 }}
                     animate={{ width: 48 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                   />
                   <motion.p
-                    className="text-white text-[16px] mb-8"
+                    className="text-gray-700 text-[16px] mb-8"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
@@ -147,7 +147,7 @@ const WhyOurCustomers = () => {
                   </motion.p>
                 </div>
                 <motion.p
-                  className="text-primary font-semibold"
+                  className="text-secendary font-semibold"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}

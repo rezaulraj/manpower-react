@@ -82,7 +82,7 @@ export default function Footer() {
       animate={isVisible ? "visible" : "hidden"}
       variants={footerVariants}
     >
-      <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative container mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
           <motion.div className="lg:col-span-2" variants={itemVariants}>
             <motion.div
