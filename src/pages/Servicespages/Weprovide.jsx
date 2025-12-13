@@ -60,21 +60,6 @@ export default function WeProvide() {
     },
   };
 
-  const headerVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -336,7 +321,7 @@ export default function WeProvide() {
           className="text-center mb-16"
         >
           <motion.h3
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-ubuntu"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -356,7 +341,7 @@ export default function WeProvide() {
           />
 
           <motion.p
-            className="text-lg text-gray-700 font-normal mb-8 leading-relaxed max-w-3xl mx-auto"
+            className="text-lg text-gray-700 font-normal mb-8 leading-relaxed max-w-3xl mx-auto font-ubuntu"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -405,12 +390,12 @@ export default function WeProvide() {
                     viewport={{ once: true }}
                     whileHover="hover"
                   >
-                    <div className="text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text">
+                    <div className="text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text font-ubuntu">
                       {service.icon}
                     </div>
                   </motion.div>
                   <motion.h2
-                    className="text-2xl font-bold mb-4 text-center text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text"
+                    className="text-2xl font-bold mb-4 text-center text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text font-ubuntu"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}

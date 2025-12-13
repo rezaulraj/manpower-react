@@ -1,127 +1,195 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export default function EmployeesHero() {
+  const [displayText, setDisplayText] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
+
+  const fullText = "Solutions";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    let timeoutId;
+
+    const typeWriter = () => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.substring(0, currentIndex));
+        currentIndex++;
+        timeoutId = setTimeout(typeWriter, 100);
+      } else {
+        setIsComplete(true);
+      }
+    };
+
+    timeoutId = setTimeout(typeWriter, 1000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      y: 30,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: {
+      x: 50,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const cursorVariants = {
+    blink: {
+      opacity: [1, 0.3, 1],
+      transition: {
+        duration: 0.8,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: {
+      scale: 0.9,
+      opacity: 0,
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.8,
+      },
+    },
+    hover: {
+      scale: 1.02,
+      y: -1,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <section className="relative py-32 bg-[#183444] overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section className="relative py-44 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+      <motion.div
+        initial={{ scale: 1.05, opacity: 0 }}
+        animate={{ scale: 1, opacity: 0.7 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="absolute inset-0 z-0"
+      >
         <img
           src="/images/service.jpg"
-          alt="Hero"
-          className="object-cover opacity-20 w-full h-auto"
+          alt="Employees Hero"
+          className="object-cover w-full h-full"
+          priority
         />
-      </div>
 
-      <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-start w-full px-4">
-        <div className="text-start">
-          <motion.h1
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl capitalize font-Inter md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight"
+        <div className="absolute inset-0 bg-gradient-to-l from-gray-900 via-gray-900/95 to-transparent" />
+      </motion.div>
+
+      <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-end w-full px-4">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-8 max-w-4xl text-right"
+        >
+          <motion.div variants={textVariants} className="space-y-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-ubuntu font-bold text-white leading-tight min-h-[1.2em]">
+              <div className="relative inline-block">
+                Innovative Employment
+                <br />
+                <span className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent text-right">
+                  {displayText}
+                  {isComplete && (
+                    <motion.span
+                      variants={cursorVariants}
+                      animate="blink"
+                      className="inline-block w-[2px] h-[1em] ml-1 bg-gradient-to-b from-yellow-400 to-red-500"
+                    />
+                  )}
+                </span>
+              </div>
+            </h1>
+          </motion.div>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl text-white/90  leading-relaxed font-ubuntu text-right"
           >
-            <motion.span
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="block"
+            Empowering your workforce today! We provide forward‑thinking hiring
+            models that foster collaboration, leverage global talent, and
+            deliver exceptional value to organizations locally and
+            internationally.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="text-right">
+            <motion.a
+              href="/contact"
+              variants={buttonVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              className="inline-flex items-center gap-2 bg-linear-to-r from-[#44B6DA] to-yellow-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200 font-ubuntu"
             >
-              Innovative Employment
-            </motion.span>
-            <motion.span
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="block"
-            >
-              <motion.span
-                animate={{
-                  backgroundPosition: ["0%", "100%", "0%"],
-                }}
+              Contact Now
+              <motion.svg
+                animate={{ x: [0, 3, 0] }}
                 transition={{
-                  duration: 3,
+                  duration: 1.5,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="bg-gradient-to-r from-white via-[#44B6DA] to-yellow-400 bg-[length:200%_auto] bg-clip-text text-transparent"
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                Solutions
-              </motion.span>
-            </motion.span>
-          </motion.h1>
-        </div>
-
-        <motion.p
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg text-start font-Inter md:text-xl lg:text-2xl text-white max-w-5xl mb-10"
-        >
-          Empowering your workforce today! We provide forward‑thinking hiring
-          models that foster collaboration, leverage global talent, and deliver
-          exceptional value to organizations locally and internationally.
-        </motion.p>
-
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0, y: 20 }}
-          animate={{ scale: 1, opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 15,
-            delay: 0.8,
-          }}
-          whileHover={{
-            scale: 1.05,
-            y: -2,
-            transition: { type: "spring", stiffness: 400 },
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="relative"
-        >
-          <motion.div
-            initial={{ boxShadow: "0 0 0 0 rgba(255, 255, 255, 0.4)" }}
-            animate={{
-              boxShadow: [
-                "0 0 0 0 rgba(255, 255, 255, 0.4)",
-                "0 0 0 15px rgba(255, 255, 255, 0)",
-                "0 0 0 0 rgba(255, 255, 255, 0)",
-              ],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 2,
-            }}
-            className="absolute inset-0 rounded-md"
-          />
-
-          <Link
-            to="/contact"
-            className="relative bg-white font-Inter font-bold text-[#183444] px-8 py-4 rounded-md text-lg hover:bg-gray-50 transition-all duration-300 shadow-2xl flex items-center gap-3 group overflow-hidden"
-          >
-            <div className="absolute inset-0 -inset-x-32 -inset-y-10 bg-gradient-to-r from-transparent via-white/30 to-transparent transform rotate-12 scale-y-150 group-hover:translate-x-64 transition-transform duration-1000" />
-
-            <span className="relative z-10">Contact Now</span>
-
-            <motion.span
-              animate={{
-                x: [0, 5, 0],
-                rotate: [0, 10, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative z-10 text-xl"
-            >
-              ✨
-            </motion.span>
-          </Link>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </motion.svg>
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
+
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-5" />
     </section>
   );
 }
