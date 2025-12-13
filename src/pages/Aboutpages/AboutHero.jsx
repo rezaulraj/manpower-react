@@ -103,7 +103,6 @@ export default function AboutHero() {
 
   return (
     <section className="relative py-44 bg-[#201D1F] overflow-hidden">
-      {/* Background Image with Simple Overlay */}
       <motion.div
         initial={{ scale: 1.05, opacity: 0 }}
         animate={{ scale: 1, opacity: 0.7 }}
@@ -117,11 +116,9 @@ export default function AboutHero() {
           priority
         />
 
-        {/* Simple Overlay */}
         <div className="absolute inset-0 bg-gradient-to-l from-[#201D1F] via-[#201D1F]/95 to-transparent" />
       </motion.div>
 
-      {/* Content */}
       <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-end w-full text-end px-4">
         <motion.div
           variants={containerVariants}
@@ -129,18 +126,16 @@ export default function AboutHero() {
           animate="visible"
           className="space-y-8 max-w-3xl"
         >
-          {/* Heading with Type Effect */}
           <motion.div variants={textVariants} className="space-y-4">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight min-h-[1.2em]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-ubuntu font-bold text-white leading-tight min-h-[1.2em]">
               <div className="relative inline-block">
-                {/* Typing Text */}
-                <span className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent">
                   {displayText}
                   {isComplete && (
                     <motion.span
                       variants={cursorVariants}
                       animate="blink"
-                      className="inline-block w-[2px] h-[1em] ml-1 bg-gradient-to-b from-[#44B6DA] to-yellow-400"
+                      className="inline-block w-0.5 h-[1em] ml-1 bg-linear-to-b from-[#44B6DA] to-yellow-400"
                     />
                   )}
                 </span>
@@ -148,17 +143,15 @@ export default function AboutHero() {
             </h1>
           </motion.div>
 
-          {/* Paragraph - Static, No Auto Movement */}
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed"
+            className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed font-ubuntu"
           >
             Step away from the traditional recruitment path and step into a
             career experience that inspires growth, fuels ambition, and shapes
             your professional future.
           </motion.p>
 
-          {/* Simple Button */}
           <motion.div variants={itemVariants}>
             <motion.a
               href="/contact"
@@ -166,7 +159,7 @@ export default function AboutHero() {
               initial="hidden"
               animate="visible"
               whileHover="hover"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200 font-ubuntu"
             >
               Apply Here
               <motion.svg
@@ -193,7 +186,6 @@ export default function AboutHero() {
         </motion.div>
       </div>
 
-      {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#201D1F] to-transparent z-5" />
     </section>
   );

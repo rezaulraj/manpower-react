@@ -228,7 +228,7 @@ const Work = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="inline-block mb-6">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 inline-block relative">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 inline-block relative font-ubuntu">
               Work with Us
               <motion.div
                 initial={{ width: 0 }}
@@ -241,7 +241,7 @@ const Work = () => {
           </motion.div>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed font-ubuntu"
             variants={itemVariants}
           >
             We provide the talent you need to excel. Let's explore how we can
@@ -291,7 +291,7 @@ const Work = () => {
                 >
                   <a
                     href={card.href}
-                    className={`bg-gradient-to-r ${card.color} text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:shadow-2xl transition-all duration-300 shadow-lg group-hover:scale-105`}
+                    className={`bg-gradient-to-r ${card.color} text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:shadow-2xl transition-all duration-300 shadow-lg group-hover:scale-105 font-ubuntu`}
                   >
                     {card.title}
                     <motion.span
@@ -311,10 +311,10 @@ const Work = () => {
 
               <div className="absolute inset-0 p-6 md:p-8 flex items-end z-10">
                 <div className="text-white">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-ubuntu">
                     {card.title} Solutions
                   </h3>
-                  <p className="text-gray-200 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  <p className="text-gray-200 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 font-ubuntu">
                     Expert talent solutions tailored to your business needs
                   </p>
                 </div>

@@ -95,7 +95,7 @@ const WhyOurCustomers = () => {
             variants={containerVariants}
           >
             <motion.h2
-              className="text-4xl md:text-[56px] font-bold mb-6"
+              className="text-4xl md:text-[56px] font-bold mb-6 font-ubuntu"
               variants={itemVariants}
             >
               Why Our Customers Work With Us.
@@ -109,7 +109,7 @@ const WhyOurCustomers = () => {
             <motion.div variants={itemVariants}>
               <a
                 href="/reviews"
-                className="inline-block text-white rounded-4xl border-2 border-primary py-4 px-8 cursor-pointer font-semibold hover:underline text-lg transition-all duration-300 hover:scale-105"
+                className="inline-block text-white rounded-4xl border-2 border-primary py-4 px-8 cursor-pointer font-semibold hover:underline text-lg transition-all duration-300 hover:scale-105 font-ubuntu"
               >
                 Customer Reviews →
               </a>
@@ -138,7 +138,7 @@ const WhyOurCustomers = () => {
                     transition={{ delay: 0.2, duration: 0.5 }}
                   />
                   <motion.p
-                    className="text-gray-700 text-[16px] mb-8"
+                    className="text-gray-700 text-[16px] mb-8 font-ubuntu"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
@@ -147,7 +147,7 @@ const WhyOurCustomers = () => {
                   </motion.p>
                 </div>
                 <motion.p
-                  className="text-secendary font-semibold"
+                  className="text-secendary font-semibold font-ubuntu"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}

@@ -64,7 +64,6 @@ export default function AchieveMore() {
     },
   };
 
-  /* ------------------ Variants ------------------ */
 
   const tabVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -136,7 +135,6 @@ export default function AchieveMore() {
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-5">
         <div className="flex flex-col lg:flex-row items-start gap-12">
-          {/* ---------------- Image Section ---------------- */}
           <div className="w-full lg:w-1/2">
             <AnimatePresence mode="wait">
               <motion.div
@@ -157,7 +155,6 @@ export default function AchieveMore() {
             </AnimatePresence>
           </div>
 
-          {/* ---------------- Tabs + Content Section ---------------- */}
           <div className="w-full lg:w-1/2">
             <motion.div
               className="flex gap-6 flex-wrap"
@@ -178,7 +175,7 @@ export default function AchieveMore() {
                   variants={tabVariants}
                   whileHover="hover"
                   whileTap="tap"
-                  className={`relative font-Inter font-semibold px-4 py-2 text-[20px] transition-colors ${
+                  className={`relative font-Inter font-semibold px-4 py-2 text-[20px] transition-colors font-ubuntu ${
                     activeTab === tab
                       ? "text-primary"
                       : "text-secendary hover:text-primary"
@@ -199,7 +196,6 @@ export default function AchieveMore() {
               ))}
             </motion.div>
 
-            {/* ---------------- Dynamic Text Content ---------------- */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -219,10 +215,10 @@ export default function AchieveMore() {
                     whileHover={{ x: 10, transition: { duration: 0.2 } }}
                     className="border-l-4 border-transparent hover:border-primary pl-4 transition-colors"
                   >
-                    <h3 className="text-[22px] font-Inter font-semibold text-gray-900">
+                    <h3 className="text-[22px] font-Inter font-semibold text-gray-900 font-ubuntu">
                       {item.title}
                     </h3>
-                    <p className="text-text font-normal text-[16px] mt-1">
+                    <p className="text-text font-normal text-[16px] mt-1 font-ubuntu">
                       {item.description}
                     </p>
                   </motion.div>

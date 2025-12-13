@@ -202,7 +202,7 @@ export default function SkilledTalent() {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/10 via-transparent to-transparent"></div>
       </div>
 
-      <div className="container mx-auto max-w-7xl px-5 relative z-10">
+      <div className="container mx-auto px-5 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
             variants={imageVariants}
@@ -232,7 +232,7 @@ export default function SkilledTalent() {
               className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl -rotate-12 shadow-xl"
             >
               <div className="absolute inset-2 bg-white/90 rounded-xl flex items-center justify-center">
-                <span className="text-purple-600 font-bold text-xs">
+                <span className="text-purple-600 font-bold text-xs font-ubuntu">
                   Trusted
                 </span>
               </div>
@@ -253,20 +253,20 @@ export default function SkilledTalent() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants}>
-              <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full">
-                <span className="text-white text-sm font-semibold tracking-wider">
+              <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-ubuntu">
+                <span className="text-white text-sm font-semibold tracking-wider font-ubuntu">
                   TOP SKILLS & EXPERTISE
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-ubuntu">
                 Empowering Businesses with{" "}
                 <span className="text-transparent bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 bg-clip-text">
                   the Right Talent
                 </span>
               </h1>
 
-              <p className="text-lg text-gray-700 max-w-2xl mb-8">
+              <p className="text-lg text-gray-700 max-w-2xl mb-8 font-ubuntu">
                 Whether you are a professional ready for your next career move
                 or a company looking to build a high-performing team, we are
                 here to connect you with success.
@@ -282,13 +282,13 @@ export default function SkilledTalent() {
                 >
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
-                      <span className="text-xl">{skill.icon}</span>
-                      <span className="font-semibold text-gray-900 text-lg">
+                      <span className="text-xl font-ubuntu">{skill.icon}</span>
+                      <span className="font-semibold text-gray-900 text-lg font-ubuntu">
                         {skill.name}
                       </span>
                     </div>
                     <motion.span
-                      className="text-gray-600 font-medium"
+                      className="text-gray-600 font-medium font-ubuntu"
                       variants={counterVariants}
                       custom={skill.percentage}
                       initial="hidden"

@@ -277,7 +277,7 @@ const Specialisms = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 font-ubuntu"
           >
             <span className="relative">
               Industries
@@ -322,12 +322,12 @@ const Specialisms = () => {
 
                   <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end text-white z-10">
                     <div className="space-y-3 md:space-y-4">
-                      <h3 className="text-xl md:text-2xl font-bold leading-tight">
+                      <h3 className="text-xl md:text-2xl font-bold leading-tight font-ubuntu">
                         {item.title}
                       </h3>
 
                       <div className="flex items-center gap-2 pt-2 md:pt-4">
-                        <span className="text-sm md:text-base font-semibold text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300">
+                        <span className="text-sm md:text-base font-semibold text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300 font-ubuntu">
                           Explore
                         </span>
                         <motion.div
@@ -347,7 +347,7 @@ const Specialisms = () => {
 
                   <div className="absolute top-4 right-4 z-20">
                     <div className="bg-gradient-to-br from-yellow-600 to-orange-600 backdrop-blur-sm rounded-full px-3 py-1 border border-yellow-300/30">
-                      <span className="text-white text-xs font-semibold">
+                      <span className="text-white text-xs font-semibold font-ubuntu">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
@@ -369,7 +369,7 @@ const Specialisms = () => {
             to="/contact"
             className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 text-white px-10 py-4 md:px-12 md:py-5 rounded-full font-semibold text-lg md:text-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
           >
-            <span className="relative z-10 flex items-center gap-3">
+            <span className="relative z-10 flex items-center gap-3 font-ubuntu">
               Contact Us
               <motion.div
                 animate={{ x: [0, 5, 0] }}

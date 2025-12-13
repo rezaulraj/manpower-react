@@ -67,21 +67,21 @@ export default function Empowering() {
           >
             <motion.h4
               variants={fadeUp}
-              className="text-[18px] md:text-3xl font-Inter font-bold text-primary mb-4"
+              className="text-[18px] md:text-3xl font-Inter font-bold text-primary mb-4 font-ubuntu"
             >
               ABOUT US
             </motion.h4>
 
             <motion.h1
               variants={fadeUp}
-              className="text-[48px] text-heading font-Inter font-bold"
+              className="text-[48px] text-heading font-Inter font-bold font-ubuntu"
             >
               Empowering Success Since 2016
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-lg font-Inter text-text font-normal mb-6 leading-relaxed"
+              className="text-lg font-Inter text-text font-normal mb-6 leading-relaxed font-ubuntu"
             >
               More than a recruitment agency, we connect skilled professionals
               with forward-thinking businesses to drive mutual growth.
@@ -114,14 +114,14 @@ export default function Empowering() {
           >
             <motion.h4
               variants={fadeUp}
-              className="text-[24px] text-heading font-Inter font-bold mb-3"
+              className="text-[24px] text-heading font-Inter font-bold mb-3 font-ubuntu"
             >
               Connecting Talent to Opportunity
             </motion.h4>
 
             <motion.p
               variants={fadeUp}
-              className="text-lg font-Inter text-text font-normal mb-8 leading-relaxed"
+              className="text-lg font-Inter text-text font-normal mb-8 leading-relaxed font-ubuntu"
             >
               We know the right people make all the difference. Our mission is
               to match high-performing professionals with organizations where
@@ -130,14 +130,14 @@ export default function Empowering() {
 
             <motion.h4
               variants={fadeUp}
-              className="text-[24px] text-heading font-bold font-Inter mb-4"
+              className="text-[24px] text-heading font-bold font-Inter mb-4 font-ubuntu"
             >
               Your Trusted Recruitment Partner
             </motion.h4>
 
             <motion.p
               variants={fadeUp}
-              className="text-lg font-Inter text-gray-600 leading-relaxed"
+              className="text-lg font-Inter text-gray-600 leading-relaxed font-ubuntu"
             >
               With years of industry experience, we provide reliable, tailored
               hiring solutions that help businesses grow and give candidates the

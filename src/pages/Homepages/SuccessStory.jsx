@@ -310,7 +310,7 @@ const Specialisms = () => {
             className="text-center mb-12"
           >
             <motion.h3
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-ubuntu"
               initial={{ opacity: 0, y: 20 }}
               animate={isStatsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -357,7 +357,7 @@ const Specialisms = () => {
 
                   <div className="relative z-10 text-center">
                     <motion.div
-                      className="text-3xl mb-4"
+                      className="text-3xl mb-4 font-ubuntu"
                       initial={{ scale: 0, rotate: -180 }}
                       animate={statsControls ? { scale: 1, rotate: 0 } : {}}
                       transition={{
@@ -371,7 +371,7 @@ const Specialisms = () => {
                     </motion.div>
 
                     <motion.div
-                      className="text-4xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text mb-2"
+                      className="text-4xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text mb-2 font-ubuntu"
                       initial={{ opacity: 0 }}
                       animate={statsControls ? { opacity: 1 } : {}}
                       transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
@@ -385,7 +385,7 @@ const Specialisms = () => {
                     </motion.div>
 
                     <motion.p
-                      className="text-gray-700 text-sm md:text-base font-medium"
+                      className="text-gray-700 text-sm md:text-base font-medium font-ubuntu"
                       initial={{ opacity: 0, y: 10 }}
                       animate={statsControls ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.5, delay: index * 0.1 + 0.7 }}
@@ -419,7 +419,7 @@ const Specialisms = () => {
           viewport={{ once: true }}
           className="text-center mt-16 md:mt-24"
         >
-          <p className="text-gray-600 mb-8 text-lg md:text-xl">
+          <p className="text-gray-600 mb-8 text-lg md:text-xl font-ubuntu">
             Ready to transform your workforce?
           </p>
 
@@ -427,7 +427,7 @@ const Specialisms = () => {
             to="/contact"
             className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 text-white px-10 py-4 md:px-12 md:py-5 rounded-full font-semibold text-lg md:text-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
           >
-            <span className="relative z-10 flex items-center gap-3">
+            <span className="relative z-10 flex items-center gap-3 font-ubuntu">
               Start Your Journey
               <motion.div
                 animate={{ x: [0, 5, 0] }}

@@ -66,7 +66,7 @@ const BrandMarquee = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-600 mb-6"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-600 mb-6 font-ubuntu"
         >
           <span className="relative">
             Trusted by Leading Brands
@@ -85,7 +85,7 @@ const BrandMarquee = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto font-ubuntu"
         >
           Partnering with industry leaders worldwide
         </motion.p>
@@ -133,7 +133,7 @@ const BrandMarquee = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileHover={{ opacity: 1, y: 0 }}
-                    className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-500 to-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap shadow-lg"
+                    className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-500 to-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap shadow-lg font-ubuntu"
                   >
                     Partner
                   </motion.div>
@@ -151,7 +151,7 @@ const BrandMarquee = () => {
         viewport={{ once: true }}
         className="text-center mt-12 md:mt-16 relative z-10"
       >
-        <p className="text-gray-8 00 mb-6 text-lg md:text-xl">
+        <p className="text-gray-8 00 mb-6 text-lg md:text-xl font-ubuntu">
           Join our growing network of successful partnerships
         </p>
 
@@ -159,7 +159,7 @@ const BrandMarquee = () => {
           href="/contact"
           className="group inline-flex items-center gap-3 bg-gradient-to-r from-white to-yellow-100 text-amber-900 px-8 py-4 md:px-10 md:py-5 rounded-full font-semibold text-lg md:text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden"
         >
-          <span className="relative z-10 flex items-center gap-3">
+          <span className="relative z-10 flex items-center gap-3 font-ubuntu">
             Become a Partner
             <motion.svg
               animate={{ x: [0, 5, 0] }}
@@ -182,7 +182,6 @@ const BrandMarquee = () => {
             </motion.svg>
           </span>
 
-          {/* Button Glow */}
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -191,7 +190,6 @@ const BrandMarquee = () => {
         </a>
       </motion.div>
 
-      {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <motion.div

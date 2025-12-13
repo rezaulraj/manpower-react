@@ -295,7 +295,7 @@ const OurValue = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-yellow-100/20 via-transparent to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -304,7 +304,7 @@ const OurValue = () => {
           className="text-center mb-16"
         >
           <motion.h3
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-ubuntu"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -325,7 +325,7 @@ const OurValue = () => {
           />
 
           <motion.p
-            className="text-lg text-gray-700 font-normal mb-8 leading-relaxed max-w-3xl mx-auto"
+            className="text-lg text-gray-700 font-normal mb-8 leading-relaxed max-w-3xl mx-auto font-ubuntu"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -368,7 +368,7 @@ const OurValue = () => {
 
                 <div className="relative z-10">
                   <motion.div
-                    className="text-4xl mb-6 flex justify-center"
+                    className="text-4xl mb-6 flex justify-center font-ubuntu"
                     variants={iconVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -379,7 +379,7 @@ const OurValue = () => {
                   </motion.div>
 
                   <motion.h3
-                    className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-center mb-6"
+                    className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-center mb-6 font-ubuntu"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -388,11 +388,11 @@ const OurValue = () => {
                     {value.title}
                   </motion.h3>
 
-                  <motion.ul className="space-y-4">
+                  <motion.ul className="space-y-4 font-ubuntu">
                     {value.items.map((item, itemIndex) => (
                       <motion.li
                         key={itemIndex}
-                        className="flex items-start"
+                        className="flex items-start font-ubuntu"
                         variants={listItemVariants}
                         custom={itemIndex}
                         initial="hidden"
@@ -400,7 +400,7 @@ const OurValue = () => {
                         viewport={{ once: true }}
                       >
                         <motion.span
-                          className="text-yellow-600 mr-3 text-xl"
+                          className="text-yellow-600 mr-3 text-xl font-ubuntu"
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
                           viewport={{ once: true }}

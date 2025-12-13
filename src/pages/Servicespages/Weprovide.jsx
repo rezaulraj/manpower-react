@@ -55,31 +55,31 @@ export default function WeProvide() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const headerVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50 
+    hidden: {
+      opacity: 0,
+      y: 50,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 60,
-      scale: 0.8
+      scale: 0.8,
     },
     visible: {
       opacity: 1,
@@ -87,32 +87,30 @@ export default function WeProvide() {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     hover: {
-      y: -15,
+      y: -10,
       scale: 1.05,
-      backgroundColor: "#3B82F6",
-      color: "white",
       transition: {
-        duration: 0.4,
-        ease: "easeInOut"
-      }
+        duration: 0.3,
+        ease: "easeInOut",
+      },
     },
     tap: {
       scale: 0.95,
       transition: {
-        duration: 0.2
-      }
-    }
+        duration: 0.2,
+      },
+    },
   };
 
   const iconVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       scale: 0,
-      rotate: -180 
+      rotate: -180,
     },
     visible: {
       opacity: 1,
@@ -120,76 +118,257 @@ export default function WeProvide() {
       rotate: 0,
       transition: {
         duration: 0.6,
-        ease: "backOut"
-      }
+        type: "spring",
+        stiffness: 100,
+      },
     },
     hover: {
       scale: 1.2,
       rotate: 360,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const textVariants = {
-    hidden: { 
-      opacity: 0, 
-      x: -20 
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const descriptionVariants = {
-    hidden: { 
-      opacity: 0, 
-      height: 0 
-    },
-    visible: {
-      opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.5,
         ease: "easeOut",
-        delay: 0.2
-      }
-    }
+      },
+    },
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-5 max-w-7xl">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          <motion.h1 
-            className="text-4xl font-bold text-center mb-4"
-            variants={headerVariants}
+    <section className="relative py-10 overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-linear-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
+        <div className="absolute inset-0">
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="0 0 1440 800"
+            preserveAspectRatio="none"
           >
-            Professional Coaching
-          </motion.h1>
-          <motion.p 
-            className="text-gray-600 text-[16px] text-center mb-12"
-            variants={headerVariants}
+            <defs>
+              <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.2" />
+                <stop offset="70%" stopColor="#F59E0B" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#D97706" stopOpacity="0" />
+              </radialGradient>
+
+              <linearGradient
+                id="goldGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stopColor="#FCD34D" stopOpacity="0.15" />
+                <stop offset="50%" stopColor="#F59E0B" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#DC2626" stopOpacity="0.05" />
+              </linearGradient>
+
+              <linearGradient
+                id="orangeGradient"
+                x1="100%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
+              >
+                <stop offset="0%" stopColor="#EA580C" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#F59E0B" stopOpacity="0.08" />
+                <stop offset="100%" stopColor="#FCD34D" stopOpacity="0.15" />
+              </linearGradient>
+
+              <linearGradient
+                id="redGradient"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.08" />
+                <stop offset="50%" stopColor="#EA580C" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.08" />
+              </linearGradient>
+            </defs>
+
+            <motion.circle
+              cx="50%"
+              cy="50%"
+              r="400"
+              fill="url(#sunGlow)"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.15, 0.25, 0.15],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {[
+              {
+                cx: "15%",
+                cy: "20%",
+                r: 120,
+                gradient: "goldGradient",
+                delay: 0,
+              },
+              {
+                cx: "85%",
+                cy: "30%",
+                r: 150,
+                gradient: "orangeGradient",
+                delay: 2,
+              },
+              {
+                cx: "25%",
+                cy: "70%",
+                r: 180,
+                gradient: "redGradient",
+                delay: 4,
+              },
+              {
+                cx: "75%",
+                cy: "65%",
+                r: 100,
+                gradient: "goldGradient",
+                delay: 1,
+              },
+              {
+                cx: "10%",
+                cy: "50%",
+                r: 140,
+                gradient: "orangeGradient",
+                delay: 3,
+              },
+              {
+                cx: "90%",
+                cy: "15%",
+                r: 160,
+                gradient: "redGradient",
+                delay: 5,
+              },
+            ].map((circle, index) => (
+              <motion.circle
+                key={index}
+                cx={circle.cx}
+                cy={circle.cy}
+                r={circle.r}
+                fill={`url(#${circle.gradient})`}
+                animate={{
+                  cx: [
+                    circle.cx,
+                    `calc(${circle.cx} ${index % 2 === 0 ? "+" : "-"} 2%)`,
+                    circle.cx,
+                  ],
+                  cy: [
+                    circle.cy,
+                    `calc(${circle.cy} ${index % 3 === 0 ? "+" : "-"} 1.5%)`,
+                    circle.cy,
+                  ],
+                  scale: [1, 1.03, 1],
+                }}
+                transition={{
+                  duration: 15 + index,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: circle.delay,
+                }}
+              />
+            ))}
+
+            {[...Array(4)].map((_, i) => (
+              <motion.circle
+                key={`ring-${i}`}
+                cx="50%"
+                cy="50%"
+                r={250 + i * 80}
+                fill="none"
+                stroke="#F59E0B"
+                strokeWidth="1"
+                strokeOpacity="0.08"
+                strokeDasharray="5,5"
+                animate={{
+                  strokeDashoffset: [0, 20, 0],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 20 + i * 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: i,
+                }}
+              />
+            ))}
+
+            {[...Array(30)].map((_, i) => (
+              <motion.circle
+                key={`dot-${i}`}
+                cx={`${Math.random() * 100}%`}
+                cy={`${Math.random() * 100}%`}
+                r={1 + Math.random() * 2}
+                fill="#DC2626"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: [0, 0.2, 0],
+                  cy: [
+                    `${Math.random() * 100}%`,
+                    `${Math.random() * 100}%`,
+                    `${Math.random() * 100}%`,
+                  ],
+                }}
+                transition={{
+                  duration: 4 + Math.random() * 4,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+              />
+            ))}
+          </svg>
+        </div>
+
+        <div className="absolute inset-0 bg-linear-to-t from-yellow-100/20 via-transparent to-transparent"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <motion.h3
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            What We{" "}
+            <span className="text-transparent bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text">
+              Provide
+            </span>
+          </motion.h3>
+          <motion.div
+            className="w-24 h-1 bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 mx-auto rounded-full mb-8"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          />
+
+          <motion.p
+            className="text-lg text-gray-700 font-normal mb-8 leading-relaxed max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
           >
             We guide professionals in developing their skills, boosting
             confidence, and preparing for career advancement.
           </motion.p>
         </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -201,49 +380,96 @@ export default function WeProvide() {
               variants={itemVariants}
               whileHover="hover"
               whileTap="tap"
-              className="flex flex-col bg-gray-50 min-h-[300px] p-8 rounded-lg cursor-pointer group relative overflow-hidden"
+              className="group relative"
             >
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-0 group-hover:opacity-10"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 0.1 }}
-                transition={{ duration: 0.3 }}
-              />
-              
-              <motion.div
-                variants={iconVariants}
-                className="text-primary group-hover:text-white relative z-10"
-              >
-                {service.icon}
-              </motion.div>
+              <div className="relative bg-linear-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-xl overflow-hidden h-full">
+                <motion.div
+                  className="absolute inset-0 rounded-2xl bg-linear-to-r from-yellow-400/20 to-red-500/20 opacity-0 group-hover:opacity-100"
+                  initial={false}
+                  transition={{ duration: 0.3 }}
+                />
 
-              <motion.h2 
-                className="text-2xl font-bold mb-3 relative z-10"
-                variants={textVariants}
-              >
-                {service.title}
-              </motion.h2>
+                <motion.div
+                  className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "200%" }}
+                  transition={{ duration: 0.8 }}
+                />
 
-              <motion.p 
-                className="text-gray-600 group-hover:text-white flex-grow relative z-10"
-                variants={descriptionVariants}
-              >
-                {service.description}
-              </motion.p>
+                <div className="relative z-10">
+                  <motion.div
+                    className="flex justify-center mb-6"
+                    variants={iconVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    whileHover="hover"
+                  >
+                    <div className="text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text">
+                      {service.icon}
+                    </div>
+                  </motion.div>
+                  <motion.h2
+                    className="text-2xl font-bold mb-4 text-center text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    {service.title}
+                  </motion.h2>
 
-              <motion.div 
-                className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-lg"
-                initial={{ opacity: 0 }}
-                whileHover={{ 
-                  opacity: 1,
-                  borderColor: "#3B82F6"
-                }}
-                transition={{ duration: 0.3 }}
-              />
+                  <motion.p
+                    className="text-gray-700 text-base leading-relaxed text-center"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    {service.description}
+                  </motion.p>
+                </div>
+
+                <motion.div
+                  className="absolute top-4 right-4 w-2 h-2 bg-yellow-500 rounded-full opacity-60"
+                  animate={{
+                    y: [0, -6, 0],
+                    opacity: [0.6, 1, 0.6],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.2,
+                  }}
+                />
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={`float-${i}`}
+          className="absolute w-2 h-2 rounded-full bg-linear-to-r from-yellow-400/50 to-red-500/50"
+          style={{
+            left: `${10 + i * 15}%`,
+            top: `${20 + i * 10}%`,
+          }}
+          animate={{
+            y: [0, -40, 0],
+            x: [0, 20, 0],
+            scale: [1, 1.5, 1],
+            opacity: [0.3, 0.8, 0.3],
+          }}
+          transition={{
+            duration: 3 + i,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.5,
+          }}
+        />
+      ))}
     </section>
   );
 }

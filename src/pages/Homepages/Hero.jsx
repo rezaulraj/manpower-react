@@ -115,9 +115,9 @@ const Hero = () => {
           playsInline
         />
 
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-gray-700/10 to-white/3"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-blue-900/70 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/50 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-white/5 via-gray-700/10 to-white/3"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/30 via-blue-900/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-white/10 to-white/50 mix-blend-overlay"></div>
 
         <div className="absolute inset-0 overflow-hidden">
           {particles.map((particle) => (

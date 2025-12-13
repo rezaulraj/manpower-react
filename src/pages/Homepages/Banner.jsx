@@ -138,7 +138,7 @@ export default function Banner() {
               >
                 <div className="absolute inset-2 bg-white/90 rounded-xl flex items-center justify-center">
                   <FaTrophy className="text-orange-600 text-lg" />
-                  <span className="text-orange-600 font-bold text-sm ml-2">
+                  <span className="text-orange-600 font-bold text-sm ml-2 font-ubuntu">
                     Top Rated
                   </span>
                 </div>
@@ -156,7 +156,7 @@ export default function Banner() {
               >
                 <div className="absolute inset-2 bg-white/90 rounded-xl flex items-center justify-center">
                   <FaStar className="text-emerald-600" />
-                  <span className="text-emerald-600 font-bold text-sm ml-1">
+                  <span className="text-emerald-600 font-bold text-sm ml-1 font-ubuntu">
                     4.9
                   </span>
                 </div>
@@ -178,14 +178,14 @@ export default function Banner() {
                 variants={textVariants}
                 className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
               >
-                <span className="text-white text-sm font-semibold tracking-wider">
+                <span className="text-white text-sm font-semibold tracking-wider font-ubuntu">
                   PREMIUM TALENT SOLUTIONS
                 </span>
               </motion.div>
 
               <motion.h2
                 variants={textVariants}
-                className="text-gray-900 text-start lg:text-5xl md:text-4xl text-3xl font-bold leading-tight"
+                className="text-gray-900 font-ubuntu text-start lg:text-5xl md:text-4xl text-3xl font-bold leading-tight"
               >
                 Empowering Innovation with{" "}
                 <motion.span
@@ -206,7 +206,7 @@ export default function Banner() {
 
             <motion.p
               variants={paragraphVariants}
-              className="text-gray-700 text-start text-lg font-medium leading-relaxed"
+              className="text-gray-700 text-start text-lg font-medium leading-relaxed font-ubuntu"
             >
               We connect skilled professionals with the right opportunities to
               achieve your goals and create lasting value for your business.
@@ -214,7 +214,7 @@ export default function Banner() {
 
             <motion.p
               variants={paragraphVariants}
-              className="text-gray-600 text-start text-base mb-8 font-normal leading-relaxed"
+              className="text-gray-600 text-start text-base mb-8 font-normal leading-relaxed font-ubuntu"
             >
               With our Manpower Network solutions, talent management becomes
               streamlined, scalable, and smart.
@@ -223,7 +223,7 @@ export default function Banner() {
             <motion.div variants={paragraphVariants} className="inline-block">
               <a
                 href="/about"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600 to-blue-700 text-white px-10 py-5 rounded-2xl text-lg font-bold shadow-xl"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600 to-blue-700 text-white px-10 py-5 rounded-2xl text-lg font-bold shadow-xl font-ubuntu"
               >
                 <span className="flex items-center gap-3">
                   More About Us
@@ -277,7 +277,7 @@ export default function Banner() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: index * 0.2 }}
-                  className="text-center"
+                  className="text-center font-ubuntu"
                 >
                   <div
                     className={`p-6 rounded-2xl bg-gradient-to-br ${stat.color} relative overflow-hidden`}
