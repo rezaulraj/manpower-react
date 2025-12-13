@@ -101,8 +101,7 @@ const OurValue = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
-      {/* Exact same SVG background as Specialisms */}
+    <section className="relative py-10 overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
         <div className="absolute inset-0">
@@ -354,7 +353,6 @@ const OurValue = () => {
               className="group relative"
             >
               <div className="relative bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-xl overflow-hidden">
-                {/* Shimmer effect */}
                 <motion.div
                   className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/20 to-red-500/20 opacity-0 group-hover:opacity-100"
                   initial={false}
@@ -369,7 +367,6 @@ const OurValue = () => {
                 />
 
                 <div className="relative z-10">
-                  {/* Icon */}
                   <motion.div
                     className="text-4xl mb-6 flex justify-center"
                     variants={iconVariants}
@@ -381,7 +378,6 @@ const OurValue = () => {
                     {value.icon}
                   </motion.div>
 
-                  {/* Title */}
                   <motion.h3
                     className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-center mb-6"
                     initial={{ opacity: 0, y: 20 }}
@@ -392,7 +388,6 @@ const OurValue = () => {
                     {value.title}
                   </motion.h3>
 
-                  {/* Items */}
                   <motion.ul className="space-y-4">
                     {value.items.map((item, itemIndex) => (
                       <motion.li
@@ -424,7 +419,6 @@ const OurValue = () => {
                   </motion.ul>
                 </div>
 
-                {/* Floating indicator */}
                 <motion.div
                   className="absolute top-4 right-4 w-2 h-2 bg-yellow-500 rounded-full opacity-60"
                   animate={{
@@ -442,7 +436,6 @@ const OurValue = () => {
           ))}
         </motion.div>
 
-        {/* Additional decorative floating elements */}
         {[...Array(4)].map((_, i) => (
           <motion.div
             key={`float-${i}`}
@@ -464,8 +457,6 @@ const OurValue = () => {
             }}
           />
         ))}
-
-        {/* Bottom decorative elements */}
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`bottom-float-${i}`}
