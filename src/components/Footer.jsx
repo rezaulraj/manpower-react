@@ -106,20 +106,21 @@ export default function Footer() {
               </span>
               to future-focused organizations worldwide.
             </motion.p>
-
-            <motion.div
-              className="flex items-center space-x-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20"
-              whileHover={{ scale: 1.02 }}
-              variants={itemVariants}
-            >
-              <FaGlobeAmericas className="text-blue-400 text-xl" />
-              <div>
-                <p className="text-sm text-gray-300">Current Time</p>
-                <p className="text-lg font-mono font-bold text-white">
-                  {currentTime || "Loading..."}
-                </p>
-              </div>
-            </motion.div>
+            <div className="inline-block">
+              <motion.div
+                className="flex items-center space-x-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20"
+                whileHover={{ scale: 1.02 }}
+                variants={itemVariants}
+              >
+                <FaGlobeAmericas className="text-blue-400 text-xl" />
+                <div>
+                  <p className="text-sm text-gray-300">Current Time</p>
+                  <p className="text-lg font-mono font-bold text-white">
+                    {currentTime || "Loading..."}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
 
             <motion.div className="flex space-x-4 mt-6" variants={itemVariants}>
               {socialLinks.map((social, index) => (

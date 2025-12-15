@@ -129,7 +129,7 @@ export default function Recruitment() {
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
         <div className="absolute inset-0">
           <svg
             className="absolute inset-0 w-full h-full"
@@ -318,7 +318,7 @@ export default function Recruitment() {
           </svg>
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-yellow-100/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-yellow-100/20 via-transparent to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -337,12 +337,12 @@ export default function Recruitment() {
             viewport={{ once: true }}
           >
             Recruitment &{" "}
-            <span className="text-transparent bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text">
+            <span className="text-transparent bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text">
               Administration
             </span>
           </motion.h3>
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 mx-auto rounded-full mb-8"
+            className="w-24 h-1 bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 mx-auto rounded-full mb-8"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             viewport={{ once: true }}
@@ -376,7 +376,7 @@ export default function Recruitment() {
             <motion.div>
               <motion.div
                 variants={itemVariants}
-                className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full"
+                className="inline-block mb-4 px-4 py-2 bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full"
               >
                 <span className="text-white text-sm font-semibold tracking-wider font-ubuntu">
                   RECRUITMENT SOLUTIONS
@@ -388,7 +388,7 @@ export default function Recruitment() {
                 className="text-gray-900 font-ubuntu text-start lg:text-4xl md:text-3xl text-2xl font-bold leading-tight"
               >
                 Find the Right Talent for{" "}
-                <span className="bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
                   Your Business
                 </span>
               </motion.h2>
@@ -405,7 +405,7 @@ export default function Recruitment() {
             <motion.div variants={itemVariants} className="inline-block">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl font-ubuntu"
+                className="inline-flex items-center gap-3 bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl font-ubuntu"
               >
                 <span className="flex items-center gap-3">
                   Let's Start Your Story
@@ -434,7 +434,7 @@ export default function Recruitment() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl rotate-12 shadow-2xl z-20"
+                className="absolute -top-6 -left-6 w-24 h-24 bg-linear-to-br from-yellow-400 to-orange-500 rounded-2xl rotate-12 shadow-2xl z-20"
               >
                 <div className="absolute inset-2 bg-white/90 rounded-xl flex items-center justify-center">
                   <span className="text-orange-600 font-bold text-sm font-ubuntu">
@@ -467,15 +467,15 @@ export default function Recruitment() {
               whileTap="tap"
               className="group relative"
             >
-              <div className="relative bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-xl overflow-hidden h-full">
+              <div className="relative bg-linear-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-xl overflow-hidden h-full">
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/20 to-red-500/20 opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-2xl bg-linear-to-r from-yellow-400/20 to-red-500/20 opacity-0 group-hover:opacity-100"
                   initial={false}
                   transition={{ duration: 0.3 }}
                 />
 
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform"
+                  className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "200%" }}
                   transition={{ duration: 0.8 }}
@@ -490,13 +490,13 @@ export default function Recruitment() {
                     viewport={{ once: true }}
                     whileHover="hover"
                   >
-                    <div className="p-4 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full">
+                    <div className="p-4 bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full">
                       <div className="text-white">{item.icons}</div>
                     </div>
                   </motion.div>
 
                   <motion.h3
-                    className="text-xl font-bold mb-4 text-center text-transparent bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text font-ubuntu"
+                    className="text-xl font-bold mb-4 text-center text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text font-ubuntu"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -550,7 +550,7 @@ export default function Recruitment() {
                   ease: "easeInOut",
                   delay: 1,
                 }}
-                className="absolute -bottom-6 -right-6 w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl -rotate-12 shadow-2xl z-20"
+                className="absolute -bottom-6 -right-6 w-20 h-20 bg-linear-to-br from-green-400 to-emerald-600 rounded-2xl -rotate-12 shadow-2xl z-20"
               >
                 <div className="absolute inset-2 bg-white/90 rounded-xl flex items-center justify-center">
                   <span className="text-emerald-600 font-bold text-sm font-ubuntu">
@@ -574,7 +574,7 @@ export default function Recruitment() {
             <motion.div>
               <motion.div
                 variants={itemVariants}
-                className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full"
+                className="inline-block mb-4 px-4 py-2 bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full"
               >
                 <span className="text-white text-sm font-semibold tracking-wider font-ubuntu">
                   TEMPORARY STAFFING
@@ -586,7 +586,7 @@ export default function Recruitment() {
                 className="text-gray-900 font-ubuntu text-start lg:text-4xl md:text-3xl text-2xl font-bold leading-tight"
               >
                 Flexible Workforce{" "}
-                <span className="bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
                   Solutions
                 </span>
               </motion.h2>
@@ -605,7 +605,7 @@ export default function Recruitment() {
             <motion.div variants={itemVariants} className="inline-block">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl font-ubuntu"
+                className="inline-flex items-center gap-3 bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl font-ubuntu"
               >
                 <span className="flex items-center gap-3">
                   Let's Start Your Story
@@ -641,15 +641,15 @@ export default function Recruitment() {
               whileTap="tap"
               className="group relative"
             >
-              <div className="relative bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-xl overflow-hidden h-full">
+              <div className="relative bg-linear-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl p-8 border border-yellow-200/50 shadow-xl overflow-hidden h-full">
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/20 to-red-500/20 opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-2xl bg-linear-to-r from-yellow-400/20 to-red-500/20 opacity-0 group-hover:opacity-100"
                   initial={false}
                   transition={{ duration: 0.3 }}
                 />
 
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform"
+                  className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "200%" }}
                   transition={{ duration: 0.8 }}
@@ -664,13 +664,13 @@ export default function Recruitment() {
                     viewport={{ once: true }}
                     whileHover="hover"
                   >
-                    <div className="p-4 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full">
+                    <div className="p-4 bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full">
                       <div className="text-white">{item.icons}</div>
                     </div>
                   </motion.div>
 
                   <motion.h3
-                    className="text-xl font-bold mb-4 text-center text-transparent bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text font-ubuntu"
+                    className="text-xl font-bold mb-4 text-center text-transparent bg-linear-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text font-ubuntu"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -729,7 +729,7 @@ export default function Recruitment() {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={`float-${i}`}
-          className="absolute w-2 h-2 rounded-full bg-gradient-to-r from-yellow-400/50 to-red-500/50"
+          className="absolute w-2 h-2 rounded-full bg-linear-to-r from-yellow-400/50 to-red-500/50"
           style={{
             left: `${10 + i * 15}%`,
             top: `${20 + i * 10}%`,
@@ -858,7 +858,7 @@ export default function Recruitment() {
             </linearGradient>
           </defs>
         </svg>
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/10 via-transparent to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-white/10 via-transparent to-transparent"></div>
       </div>
     </section>
   );

@@ -115,7 +115,7 @@ export default function Banner() {
   return (
     <section className="relative py-10 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50"></div>
       </div>
 
       <div className="container mx-auto px-5 relative z-10">
@@ -134,7 +134,7 @@ export default function Banner() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl rotate-12 shadow-2xl"
+                className="absolute -top-6 -left-6 w-24 h-24 bg-linear-to-br from-yellow-400 to-orange-500 rounded-2xl rotate-12 shadow-2xl"
               >
                 <div className="absolute inset-2 bg-white/90 rounded-xl flex items-center justify-center">
                   <FaTrophy className="text-orange-600 text-lg" />
@@ -152,7 +152,7 @@ export default function Banner() {
                   ease: "easeInOut",
                   delay: 1,
                 }}
-                className="absolute -bottom-6 -right-6 w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl -rotate-12 shadow-2xl"
+                className="absolute -bottom-6 -right-6 w-20 h-20 bg-linear-to-br from-green-400 to-emerald-600 rounded-2xl -rotate-12 shadow-2xl"
               >
                 <div className="absolute inset-2 bg-white/90 rounded-xl flex items-center justify-center">
                   <FaStar className="text-emerald-600" />
@@ -176,7 +176,7 @@ export default function Banner() {
             <div>
               <motion.div
                 variants={textVariants}
-                className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+                className="inline-block mb-4 px-4 py-2 bg-linear-to-r from-cyan-500 to-blue-600 rounded-full"
               >
                 <span className="text-white text-sm font-semibold tracking-wider font-ubuntu">
                   PREMIUM TALENT SOLUTIONS
@@ -197,7 +197,7 @@ export default function Banner() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent"
+                  className="bg-linear-to-r from-cyan-600 via-purple-600 to-pink-600 bg-size-[200%_auto] bg-clip-text text-transparent"
                 >
                   Expert Talent
                 </motion.span>
@@ -223,7 +223,7 @@ export default function Banner() {
             <motion.div variants={paragraphVariants} className="inline-block">
               <a
                 href="/about"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600 to-blue-700 text-white px-10 py-5 rounded-2xl text-lg font-bold shadow-xl font-ubuntu"
+                className="inline-flex items-center gap-3 bg-linear-to-r from-cyan-600 to-blue-700 text-white px-10 py-5 rounded-2xl text-lg font-bold shadow-xl font-ubuntu"
               >
                 <span className="flex items-center gap-3">
                   More About Us
@@ -280,7 +280,7 @@ export default function Banner() {
                   className="text-center font-ubuntu"
                 >
                   <div
-                    className={`p-6 rounded-2xl bg-gradient-to-br ${stat.color} relative overflow-hidden`}
+                    className={`p-6 rounded-2xl bg-linear-to-br ${stat.color} relative overflow-hidden`}
                   >
                     <motion.div
                       animate={{ x: ["-100%", "200%"] }}
@@ -289,7 +289,7 @@ export default function Banner() {
                         repeat: Infinity,
                         delay: index * 0.5,
                       }}
-                      className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"
+                      className="absolute top-0 left-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-12"
                     />
 
                     <div className="relative flex flex-col items-center">
@@ -424,7 +424,7 @@ export default function Banner() {
             </linearGradient>
           </defs>
         </svg>
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/10 via-transparent to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-white/10 via-transparent to-transparent"></div>
       </div>
     </section>
   );

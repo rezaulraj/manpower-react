@@ -197,8 +197,8 @@ const Hero = () => {
             variants={textItemVariants}
             className="relative h-[1px] w-56 md:w-72 mx-auto my-12 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white to-white/30"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-white/30 via-white to-white/30"></div>
           </motion.div>
 
           <motion.p
@@ -321,7 +321,7 @@ const Hero = () => {
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/10 to-transparent"
+        className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-white/10 to-transparent"
       />
     </div>
   );

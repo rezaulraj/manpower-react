@@ -102,7 +102,7 @@ export default function EmployeesHero() {
   };
 
   return (
-    <section className="relative py-44 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+    <section className="relative py-44 bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       <motion.div
         initial={{ scale: 1.05, opacity: 0 }}
         animate={{ scale: 1, opacity: 0.7 }}
@@ -116,7 +116,7 @@ export default function EmployeesHero() {
           priority
         />
 
-        <div className="absolute inset-0 bg-gradient-to-l from-gray-900 via-gray-900/95 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-l from-gray-900 via-gray-900/95 to-transparent" />
       </motion.div>
 
       <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-end w-full px-4">
@@ -131,13 +131,13 @@ export default function EmployeesHero() {
               <div className="relative inline-block">
                 Innovative Employment
                 <br />
-                <span className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent text-right">
+                <span className="bg-linear-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-size-[200%_auto] bg-clip-text text-transparent text-right">
                   {displayText}
                   {isComplete && (
                     <motion.span
                       variants={cursorVariants}
                       animate="blink"
-                      className="inline-block w-[2px] h-[1em] ml-1 bg-gradient-to-b from-yellow-400 to-red-500"
+                      className="inline-block w-0.5 h-[1em] ml-1 bg-linear-to-b from-yellow-400 to-red-500"
                     />
                   )}
                 </span>
@@ -189,7 +189,7 @@ export default function EmployeesHero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-5" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-gray-900 to-transparent z-5" />
     </section>
   );
 }
