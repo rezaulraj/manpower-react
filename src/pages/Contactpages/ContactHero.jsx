@@ -99,9 +99,9 @@ export default function ContactHero() {
         animate="visible"
       >
         <img
-          src="/images/contactbanner.jpg"
+          src="/images/contact.avif"
           alt="Contact Hero"
-          className="object-cover w-full h-auto"
+          className="object-center w-full h-auto"
         />
         <div className="absolute inset-0 bg-gradient-to-l from-[#201D1F] via-transparent to-[#201D1F]/80" />
       </motion.div>

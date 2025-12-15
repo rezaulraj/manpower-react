@@ -1,8 +1,30 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function PartnersHero() {
+  const [displayText, setDisplayText] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
+
+  const fullText = "Partner Network";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    let timeoutId;
+
+    const typeWriter = () => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.substring(0, currentIndex));
+        currentIndex++;
+        timeoutId = setTimeout(typeWriter, 100);
+      } else {
+        setIsComplete(true);
+      }
+    };
+
+    timeoutId = setTimeout(typeWriter, 1000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -16,189 +38,156 @@ export default function PartnersHero() {
 
   const itemVariants = {
     hidden: {
-      y: 60,
+      y: 30,
       opacity: 0,
     },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        duration: 0.8,
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
   };
 
   const textVariants = {
     hidden: {
-      x: 100,
+      x: 50,
       opacity: 0,
     },
     visible: {
       x: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        stiffness: 120,
-        damping: 12,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const cursorVariants = {
+    blink: {
+      opacity: [1, 0.3, 1],
+      transition: {
         duration: 0.8,
+        repeat: Infinity,
+        ease: "easeInOut",
       },
     },
   };
 
   const buttonVariants = {
     hidden: {
-      scale: 0.8,
+      scale: 0.9,
       opacity: 0,
-      y: 30,
     },
     visible: {
       scale: 1,
       opacity: 1,
-      y: 0,
       transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 15,
+        duration: 0.5,
+        ease: "easeOut",
         delay: 0.8,
       },
     },
     hover: {
-      scale: 1.05,
-      y: -3,
-      boxShadow: "0 20px 40px rgba(255, 255, 255, 0.3)",
+      scale: 1.02,
+      y: -1,
       transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-      },
-    },
-    tap: {
-      scale: 0.95,
-    },
-  };
-
-  const pulseGlow = {
-    initial: {
-      boxShadow: "0 0 0 0 rgba(255, 255, 255, 0.4)",
-    },
-    pulse: {
-      boxShadow: [
-        "0 0 0 0 rgba(255, 255, 255, 0.4)",
-        "0 0 0 20px rgba(255, 255, 255, 0)",
-        "0 0 0 0 rgba(255, 255, 255, 0)",
-      ],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        repeatDelay: 2,
+        duration: 0.2,
+        ease: "easeInOut",
       },
     },
   };
 
   return (
-    <section className="relative py-32 bg-[#201D1F] overflow-hidden">
+    <section className="relative py-44 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       <motion.div
-        initial={{ scale: 1.1, opacity: 0 }}
+        initial={{ scale: 1.05, opacity: 0 }}
         animate={{ scale: 1, opacity: 0.7 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
         className="absolute inset-0 z-0"
       >
         <img
           src="/images/bannerpatner.jpg"
           alt="Partners Hero"
-          className="object-cover w-full h-auto"
+          className="object-cover w-full h-full"
+          priority
         />
+
+        <div className="absolute inset-0 bg-gradient-to-l from-gray-900 via-gray-900/95 to-transparent" />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0 z-0 bg-gradient-to-l from-[#201D1F] via-[#201D1F]/80 to-transparent"
-      />
-
-      <div className="container mx-auto relative z-10 flex flex-col justify-center items-end text-end px-4">
+      <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-end w-full px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-8 max-w-5xl"
+          className="space-y-8 max-w-4xl text-right"
         >
           <motion.div variants={textVariants} className="space-y-4">
-            <h1 className="text-5xl font-Inter md:text-7xl lg:text-8xl font-bold text-white leading-tight">
-              <motion.span variants={itemVariants} className="block">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-ubuntu font-bold text-white leading-tight min-h-[1.2em]">
+              <div className="relative inline-block">
                 Join Our Global
-              </motion.span>
-              <motion.span variants={itemVariants} className="block">
-                <motion.span
-                  animate={{
-                    backgroundPosition: ["0%", "100%", "0%"],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="bg-gradient-to-r from-white via-[#44B6DA] to-yellow-400 bg-[length:200%_auto] bg-clip-text text-transparent"
-                >
-                  Partner Network
-                </motion.span>
-              </motion.span>
+                <br />
+                <span className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent text-right">
+                  {displayText}
+                  {isComplete && (
+                    <motion.span
+                      variants={cursorVariants}
+                      animate="blink"
+                      className="inline-block w-[2px] h-[1em] ml-1 bg-gradient-to-b from-yellow-400 to-red-500"
+                    />
+                  )}
+                </span>
+              </div>
             </h1>
           </motion.div>
+
           <motion.p
-            variants={textVariants}
-            className="text-lg font-Inter md:text-xl lg:text-2xl text-white/90 leading-relaxed"
+            variants={itemVariants}
+            className="text-lg md:text-xl text-white/90  leading-relaxed font-ubuntu text-right"
           >
             We are always seeking trusted partners to help source and <br />{" "}
             connect qualified talent from across the globe.
           </motion.p>
 
-          <motion.div
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            className="relative inline-flex"
-          >
-            <motion.div
-              variants={pulseGlow}
-              initial="initial"
-              animate="pulse"
-              className="absolute inset-0 rounded-lg"
-            />
-
-            <a
+          <motion.div variants={itemVariants} className="text-right">
+            <motion.a
               href="/contact?type=partner"
-              className="relative bg-white font-Inter font-bold text-[#201D1F] px-10 py-5 rounded-lg text-xl hover:bg-gray-50 transition-all duration-300 shadow-2xl flex items-center gap-3 group overflow-hidden"
+              variants={buttonVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200 font-ubuntu"
             >
-              <div className="absolute inset-0 -inset-x-40 -inset-y-10 bg-gradient-to-r from-transparent via-white/30 to-transparent transform rotate-12 scale-y-150 group-hover:translate-x-80 transition-transform duration-1000" />
-
-              <span className="relative z-10">Contact as Partner</span>
-
-              <motion.span
-                animate={{
-                  x: [0, 8, 0],
-                  rotate: [0, 15, 0],
-                  scale: [1, 1.3, 1],
-                }}
+              Contact as Partner
+              <motion.svg
+                animate={{ x: [0, 3, 0] }}
                 transition={{
-                  duration: 2,
+                  duration: 1.5,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="relative z-10 text-2xl"
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                🤝
-              </motion.span>
-            </a>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </motion.svg>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#201D1F] to-transparent z-5" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-5" />
     </section>
   );
 }

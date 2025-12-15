@@ -77,7 +77,7 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="relative bg-heading text-white overflow-hidden"
+      className="relative bg-[#161C31] text-white overflow-hidden"
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       variants={footerVariants}

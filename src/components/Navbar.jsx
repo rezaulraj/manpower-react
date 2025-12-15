@@ -122,7 +122,7 @@ export default function Navbar() {
                 height={50}
                 className="w-[140px] h-[55px] object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-blue-500/0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-blue-500/0 via-blue-500/5 to-blue-500/0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           </Link>
 
@@ -188,7 +188,7 @@ export default function Navbar() {
                         <FiChevronDown
                           size={16}
                           className={`
-                            transition-transform duration-300 relative z-20
+                            transition-transform duration-300 relative z-50
                             ${hoveredMenu === link.name ? "rotate-180" : ""}
                             ${isActive ? "text-blue-600" : "text-gray-400"}
                           `}
@@ -213,14 +213,14 @@ export default function Navbar() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="fixed left-0 top-full mt-0 w-screen bg-white shadow-2xl border-t border-gray-100 overflow-hidden"
-                          style={{ zIndex: 9999 }}
+                          className="fixed left-0 top-full mt-0 w-screen bg-white shadow-2xl border-t border-gray-100 overflow-hidden z-[9999}"
+                          // style={{ zIndex: 9999 }}
                           onMouseEnter={() => setHoveredMenu(link.name)}
                           onMouseLeave={() => setHoveredMenu(null)}
                         >
                           <div className="container mx-auto px-4 py-6">
                             <div className="flex items-center gap-3 mb-4 pb-4 border-b border-gray-100">
-                              <div className="p-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+                              <div className="p-2 bg-linear-to-r from-blue-50 to-purple-50 rounded-lg">
                                 <FiGrid size={24} className="text-blue-600" />
                               </div>
                               <div>
@@ -248,7 +248,7 @@ export default function Navbar() {
                                       relative
                                       ${
                                         isSubActive
-                                          ? "bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700 font-semibold"
+                                          ? "bg-linear-to-r from-blue-50 to-blue-100 text-blue-700 font-semibold"
                                           : "text-gray-700 hover:bg-gray-50"
                                       }
                                     `}
@@ -270,7 +270,7 @@ export default function Navbar() {
                                       {sublink.name}
                                     </span>
                                     {isSubActive && (
-                                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500" />
+                                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-blue-500 to-purple-500" />
                                     )}
                                   </Link>
                                 );
@@ -319,7 +319,7 @@ export default function Navbar() {
               transition={{ type: "spring", damping: 25 }}
               className="fixed top-0 right-0 w-[85%] max-w-[400px] h-screen bg-white z-50 p-6 pt-24 overflow-y-auto shadow-2xl"
             >
-              <div className="absolute top-0 left-0 right-0 p-6 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-white">
+              <div className="absolute top-0 left-0 right-0 p-6 border-b border-gray-100 bg-linear-to-r from-blue-50 to-white">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-white rounded-xl shadow-sm">
                     <FiMenu size={20} className="text-blue-600" />

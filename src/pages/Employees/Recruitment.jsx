@@ -128,7 +128,6 @@ export default function Recruitment() {
 
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Same background as WeProvide */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
         <div className="absolute inset-0">
@@ -323,7 +322,6 @@ export default function Recruitment() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -364,7 +362,6 @@ export default function Recruitment() {
           </motion.p>
         </motion.div>
 
-        {/* First Grid Section */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
@@ -455,7 +452,6 @@ export default function Recruitment() {
           </motion.div>
         </motion.div>
 
-        {/* Selection Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           variants={containerVariants}
@@ -537,7 +533,6 @@ export default function Recruitment() {
           ))}
         </motion.div>
 
-        {/* Second Grid Section */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16"
           variants={containerVariants}
@@ -631,7 +626,6 @@ export default function Recruitment() {
           </motion.div>
         </motion.div>
 
-        {/* Business Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           variants={containerVariants}
@@ -713,7 +707,6 @@ export default function Recruitment() {
           ))}
         </motion.div>
 
-        {/* Customer Logos */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -733,7 +726,6 @@ export default function Recruitment() {
         </motion.div>
       </div>
 
-      {/* Floating elements */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={`float-${i}`}
@@ -757,7 +749,6 @@ export default function Recruitment() {
         />
       ))}
 
-      {/* Bottom SVG waves */}
       <div className="absolute bottom-0 left-0 right-0 h-2/2">
         <svg
           className="absolute bottom-0 left-0 right-0 w-full h-full"
