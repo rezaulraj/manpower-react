@@ -49,7 +49,7 @@ const Specialisms = () => {
   return (
     <section className="relative py-10 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
 
         <div className="absolute inset-0">
           <svg
@@ -267,7 +267,7 @@ const Specialisms = () => {
           </svg>
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-yellow-100/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-yellow-100/20 via-transparent to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-2 relative z-10">

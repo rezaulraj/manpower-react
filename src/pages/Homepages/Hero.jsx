@@ -69,19 +69,24 @@ const Hero = () => {
     },
   };
 
+  // Updated button variants to match AboutHero
   const buttonVariants = {
-    hidden: { scale: 0.95, opacity: 0 },
+    hidden: {
+      scale: 0.9,
+      opacity: 0,
+    },
     visible: {
       scale: 1,
       opacity: 1,
       transition: {
         duration: 0.5,
         ease: "easeOut",
+        delay: 0.8,
       },
     },
     hover: {
-      scale: 1.05,
-      y: -2,
+      scale: 1.02,
+      y: -1,
       transition: {
         duration: 0.2,
         ease: "easeInOut",
@@ -177,7 +182,7 @@ const Hero = () => {
               className="font-ubuntu text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             >
               <span className="relative">
-                <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+                <span className="bg-linear-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                   {displayText}
                 </span>
                 <motion.span
@@ -223,64 +228,67 @@ const Hero = () => {
             variants={textItemVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-5 md:gap-8"
           >
+            {/* First Button - Updated to match AboutHero */}
             <motion.a
               href="/contact"
               variants={buttonVariants}
+              initial="hidden"
+              animate="visible"
               whileHover="hover"
               whileTap="tap"
-              className="group relative px-10 py-4 md:px-12 md:py-5 rounded-full font-semibold text-lg md:text-xl overflow-hidden font-ubuntu"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200 font-ubuntu"
             >
-              <div className="absolute -inset-0.5 bg-white/30 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <div className="absolute inset-0 bg-white group-hover:bg-white/95 transition-all duration-300"></div>
-              <span className="relative flex items-center gap-3 text-black font-medium">
-                Contact Us
-                <motion.svg
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{
-                    duration: 1.2,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                  }}
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </motion.svg>
-              </span>
+              Contact Us
+              <motion.svg
+                animate={{ x: [0, 3, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </motion.svg>
             </motion.a>
 
+            {/* Second Button - Using the same color scheme with outline */}
             <motion.a
               href="/industries"
               variants={buttonVariants}
+              initial="hidden"
+              animate="visible"
               whileHover="hover"
               whileTap="tap"
-              className="group relative px-10 py-4 md:px-12 md:py-5 rounded-full font-semibold text-lg md:text-xl overflow-hidden border-2 border-white/50 hover:border-white transition-all duration-300 font-ubuntu"
+              className="group relative inline-flex items-center gap-2 bg-transparent text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200 font-ubuntu border border-transparent hover:border-gradient-to-r hover:border-gradient-from-[#44B6DA] hover:border-gradient-to-yellow-400"
             >
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 rounded-lg p-[1px] bg-gradient-to-r from-[#44B6DA] to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="bg-[#201D1F] w-full h-full rounded-[calc(0.5rem-1px)]"></div>
+              </div>
 
-              <span className="relative flex items-center gap-3 text-white font-medium">
-                Hire Worker Experts
-                <motion.span
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{
-                    duration: 1.2,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    delay: 0.5,
-                  }}
-                  className="inline-block"
-                >
-                  →
-                </motion.span>
-              </span>
+              {/* Button content */}
+              <span className="relative z-10">Hire Worker Experts</span>
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{
+                  duration: 1.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+                className="relative z-10"
+              >
+                →
+              </motion.span>
             </motion.a>
           </motion.div>
         </motion.div>
