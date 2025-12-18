@@ -223,7 +223,7 @@ export default function IndustriesWe() {
         </svg>
       </div>
 
-      <div className="container mx-auto max-w-7xl px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.h2
             variants={titleVariants}
@@ -276,7 +276,6 @@ export default function IndustriesWe() {
             >
               <Link to={industry.href}>
                 <div className="relative h-96 rounded-2xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/10 backdrop-blur-sm">
-                  {/* Background Image */}
                   <motion.img
                     src={industry.bg}
                     alt={industry.title}
@@ -284,14 +283,8 @@ export default function IndustriesWe() {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   />
-
-                  {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#201D1F] via-[#201D1F]/70 to-transparent" />
-
-                  {/* Hover Glow Effect */}
                   <div className="absolute -inset-0.5 bg-gradient-to-br from-[#44B6DA] to-yellow-400 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-
-                  {/* Content */}
                   <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end text-white z-10">
                     <div className="space-y-4">
                       <h3 className="text-2xl md:text-3xl font-bold leading-tight font-sans">
@@ -328,8 +321,6 @@ export default function IndustriesWe() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Index Badge */}
                   <div className="absolute top-4 right-4 z-20">
                     <div className="bg-gradient-to-br from-[#44B6DA] to-yellow-400 backdrop-blur-sm rounded-full px-3 py-1 border border-white/20">
                       <span className="text-white text-xs font-semibold font-Inter">
@@ -376,8 +367,6 @@ export default function IndustriesWe() {
                 />
               </motion.svg>
             </span>
-
-            {/* Glow effect on hover */}
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}

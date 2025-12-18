@@ -1,8 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { countryData } from "../../data/Industries";
-
+import { FaChevronRight } from "react-icons/fa";
+import CountryDescription from "../../contry/CountryDescription";
 export default function PartnerMap() {
+  const [selectedCountry, setSelectedCountry] = useState(null);
   const partnerBenefits = [
     {
       title: "Global Talent Network",
@@ -94,6 +96,13 @@ export default function PartnerMap() {
     },
   };
 
+  const handleCountryClick = (country) => {
+    setSelectedCountry(country);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedCountry(null);
+  };
   return (
     <section className="relative py-10 overflow-hidden">
       <div className="absolute inset-0">
@@ -412,9 +421,9 @@ export default function PartnerMap() {
               whileTap="tap"
               className="group relative"
             >
-              <a
-                href={country.href}
-                className="relative bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-yellow-200/50 shadow-xl h-80 block"
+              <div
+                onClick={() => handleCountryClick(country)}
+                className="relative bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-yellow-200/50 shadow-xl h-80 block cursor-pointer"
               >
                 <div className="absolute inset-0">
                   <img
@@ -453,7 +462,7 @@ export default function PartnerMap() {
                   whileHover={{ x: "100%" }}
                   transition={{ duration: 0.8 }}
                 />
-              </a>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -517,6 +526,14 @@ export default function PartnerMap() {
           }}
         />
       ))}
+      <AnimatePresence>
+        {selectedCountry && (
+          <CountryDescription
+            country={selectedCountry}
+            onClose={handleCloseDetails}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

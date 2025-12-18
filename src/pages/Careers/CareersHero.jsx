@@ -1,8 +1,14 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function CareersHero() {
+  const [displayText1, setDisplayText1] = useState("");
+  const [displayText2, setDisplayText2] = useState("");
+  const [displayText3, setDisplayText3] = useState("");
+  const [isFirstComplete, setIsFirstComplete] = useState(false);
+  const [isSecondComplete, setIsSecondComplete] = useState(false);
+  const [isThirdComplete, setIsThirdComplete] = useState(false);
+
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -15,6 +21,65 @@ export default function CareersHero() {
   });
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const fullText1 = "Build a Career";
+  const fullText2 = "That ";
+  const fullText3 = "Matters";
+
+  useEffect(() => {
+    let currentIndex1 = 0;
+    let timeoutId;
+
+    const typeWriterFirst = () => {
+      if (currentIndex1 <= fullText1.length) {
+        setDisplayText1(fullText1.substring(0, currentIndex1));
+        currentIndex1++;
+        timeoutId = setTimeout(typeWriterFirst, 90);
+      } else {
+        setIsFirstComplete(true);
+        setTimeout(() => {
+          let currentIndex2 = 0;
+          const typeWriterSecond = () => {
+            if (currentIndex2 <= fullText2.length) {
+              setDisplayText2(fullText2.substring(0, currentIndex2));
+              currentIndex2++;
+              setTimeout(typeWriterSecond, 80);
+            } else {
+              setIsSecondComplete(true);
+              setTimeout(() => {
+                let currentIndex3 = 0;
+                const typeWriterThird = () => {
+                  if (currentIndex3 <= fullText3.length) {
+                    setDisplayText3(fullText3.substring(0, currentIndex3));
+                    currentIndex3++;
+                    setTimeout(typeWriterThird, 70);
+                  } else {
+                    setIsThirdComplete(true);
+                  }
+                };
+                typeWriterThird();
+              }, 100);
+            }
+          };
+          typeWriterSecond();
+        }, 200);
+      }
+    };
+
+    timeoutId = setTimeout(typeWriterFirst, 600);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const cursorVariants = {
+    blink: {
+      opacity: [1, 0.3, 1],
+      transition: {
+        duration: 0.8,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -117,6 +182,35 @@ export default function CareersHero() {
     },
   };
 
+  const gradientTextVariants = {
+    hidden: {
+      backgroundPosition: "0% 50%",
+    },
+    visible: {
+      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear",
+      },
+    },
+  };
+
+  const whiteTextVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -158,7 +252,6 @@ export default function CareersHero() {
   };
 
   const countries = [
-    // Europe
     "Albania",
     "Andorra",
     "Armenia",
@@ -329,26 +422,48 @@ export default function CareersHero() {
             className="space-y-8 max-w-3xl"
           >
             <motion.div variants={textVariants} className="space-y-4">
-              <h1 className="text-5xl font-Inter md:text-7xl lg:text-8xl font-bold text-white leading-tight">
-                <motion.span variants={itemVariants} className="block">
-                  Build a Career
-                </motion.span>
-                <motion.span variants={itemVariants} className="block">
-                  That{" "}
-                  <motion.span
-                    animate={{
-                      backgroundPosition: ["0%", "100%", "0%"],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="bg-gradient-to-r from-white via-[#44B6DA] to-white bg-[length:200%_auto] bg-clip-text text-transparent"
-                  >
-                    Matters
-                  </motion.span>
-                </motion.span>
+              <h1 className="text-5xl font-Inter md:text-7xl lg:text-8xl font-bold text-white leading-tight min-h-[1.2em]">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-end">
+                    <span className="text-white font-Inter inline-block">
+                      {displayText1}
+                      {isFirstComplete && !isSecondComplete && (
+                        <motion.span
+                          variants={cursorVariants}
+                          animate="blink"
+                          className="inline-block w-0.5 h-[1em] ml-1 bg-white"
+                        />
+                      )}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-end gap-2">
+                    <motion.span
+                      variants={whiteTextVariants}
+                      initial="hidden"
+                      animate={isSecondComplete ? "visible" : "hidden"}
+                      className="text-white font-Inter inline-block"
+                    >
+                      {displayText2}
+                    </motion.span>{" "}
+                    <motion.span
+                      variants={gradientTextVariants}
+                      initial="hidden"
+                      animate={isSecondComplete ? "visible" : "hidden"}
+                      className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent font-Inter inline-block"
+                      style={{ backgroundSize: "200% auto" }}
+                    >
+                      {displayText3}
+                      {isThirdComplete && (
+                        <motion.span
+                          variants={cursorVariants}
+                          animate="blink"
+                          className="inline-block w-0.5 h-[1em] ml-1 bg-gradient-to-b from-[#44B6DA] to-yellow-400"
+                        />
+                      )}
+                    </motion.span>
+                  </div>
+                </div>
               </h1>
             </motion.div>
 
@@ -372,7 +487,7 @@ export default function CareersHero() {
               >
                 <a
                   href="/careers#positions"
-                  className="bg-white font-Inter font-bold text-[#201D1F] px-8 py-4 rounded-md text-lg hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-xl flex items-center gap-3 group"
+                  className="bg-gradient-to-r from-[#44B6DA] to-yellow-400 font-Inter font-bold text-[#201D1F] px-8 py-4 rounded-md text-lg hover:opacity-95 transition-all duration-300 shadow-2xl hover:shadow-xl flex items-center gap-3 group"
                 >
                   Explore Vacancies
                   <motion.span
@@ -396,7 +511,7 @@ export default function CareersHero() {
               >
                 <button
                   onClick={() => setShowForm(true)}
-                  className="bg-transparent font-Inter font-bold text-white border-2 border-white px-8 py-4 rounded-md text-lg hover:bg-white hover:text-[#201D1F] transition-all duration-300 backdrop-blur-sm flex items-center gap-3 group"
+                  className="bg-transparent font-Inter font-bold text-white border-2 border-[#44B6DA] px-8 py-4 rounded-md text-lg hover:bg-gradient-to-r hover:from-[#44B6DA]/20 hover:to-yellow-400/20 transition-all duration-300 backdrop-blur-sm flex items-center gap-3 group"
                 >
                   Apply for Future Position
                   <motion.span
@@ -438,13 +553,13 @@ export default function CareersHero() {
             className="bg-white rounded-2xl shadow-2xl border border-gray-200 max-w-4xl w-full max-h-[95vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-gradient-to-r from-blue-900 to-blue-950 p-8 rounded-t-2xl">
+            <div className="bg-gradient-to-r from-[#44B6DA] via-[#44B6DA]/90 to-yellow-400 p-8 rounded-t-2xl">
               <div className="flex justify-between items-start">
                 <div className="flex-1">
                   <h2 className="text-3xl font-bold text-white mb-3">
                     Apply for Future Position
                   </h2>
-                  <p className="text-blue-100 text-lg leading-relaxed">
+                  <p className="text-white/90 text-lg leading-relaxed">
                     Share your details and we will contact you when matching
                     positions open. Let&apos;s build your future together!
                   </p>
@@ -474,7 +589,7 @@ export default function CareersHero() {
                         fullName: e.target.value,
                       }))
                     }
-                    className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg"
+                    className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#44B6DA] focus:border-transparent transition-all duration-200 text-lg"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -494,7 +609,7 @@ export default function CareersHero() {
                           email: e.target.value,
                         }))
                       }
-                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg"
+                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#44B6DA] focus:border-transparent transition-all duration-200 text-lg"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -512,7 +627,7 @@ export default function CareersHero() {
                           phone: e.target.value,
                         }))
                       }
-                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg"
+                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#44B6DA] focus:border-transparent transition-all duration-200 text-lg"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
@@ -532,7 +647,7 @@ export default function CareersHero() {
                           position: e.target.value,
                         }))
                       }
-                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg appearance-none"
+                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#44B6DA] focus:border-transparent transition-all duration-200 text-lg appearance-none"
                     >
                       <option value="" className="text-gray-500">
                         Select a position
@@ -557,7 +672,7 @@ export default function CareersHero() {
                           country: e.target.value,
                         }))
                       }
-                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg appearance-none"
+                      className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#44B6DA] focus:border-transparent transition-all duration-200 text-lg appearance-none"
                     >
                       <option value="" className="text-gray-500">
                         Select your country
@@ -588,7 +703,7 @@ export default function CareersHero() {
                         message: e.target.value,
                       }))
                     }
-                    className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none text-lg"
+                    className="w-full px-4 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#44B6DA] focus:border-transparent transition-all duration-200 resize-none text-lg"
                     placeholder="Tell us about your career aspirations, skills, and why you are interested in joining our team. What makes you a great fit for our organization?"
                   />
                 </div>
@@ -597,13 +712,13 @@ export default function CareersHero() {
                     Upload CV/Resume *
                   </label>
                   <div className="space-y-4">
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 hover:border-blue-400 transition-all duration-200 bg-gray-50">
+                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 hover:border-[#44B6DA] transition-all duration-200 bg-gray-50">
                       <input
                         type="file"
                         required
                         accept=".pdf,.doc,.docx,.jpg,.png"
                         onChange={handleFileChange}
-                        className="w-full text-gray-700 file:mr-4 file:py-3 file:px-6 file:rounded-lg file:border-0 file:text-lg file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition-colors cursor-pointer"
+                        className="w-full text-gray-700 file:mr-4 file:py-3 file:px-6 file:rounded-lg file:border-0 file:text-lg file:font-semibold file:bg-gradient-to-r file:from-[#44B6DA] file:to-yellow-400 file:text-gray-900 hover:file:opacity-90 transition-colors cursor-pointer"
                       />
                     </div>
 
@@ -611,7 +726,7 @@ export default function CareersHero() {
                       <div className="space-y-3">
                         <div className="w-full bg-gray-200 rounded-full h-3">
                           <motion.div
-                            className="bg-gradient-to-r from-green-500 to-blue-500 h-3 rounded-full shadow-md"
+                            className="bg-gradient-to-r from-[#44B6DA] to-yellow-400 h-3 rounded-full shadow-md"
                             initial={{ width: 0 }}
                             animate={{ width: `${uploadProgress}%` }}
                             transition={{ duration: 0.5 }}
@@ -648,7 +763,7 @@ export default function CareersHero() {
                     disabled={isSubmitting}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-5 rounded-xl font-bold text-xl shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group"
+                    className="w-full bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 py-5 rounded-xl font-bold text-xl shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center space-x-3">
@@ -685,9 +800,9 @@ export default function CareersHero() {
                 </div>
               </form>
 
-              <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200">
+              <div className="mt-8 p-6 bg-gradient-to-r from-[#44B6DA]/10 to-yellow-400/10 rounded-xl border border-[#44B6DA]/20">
                 <div className="flex items-start space-x-4">
-                  <div className="text-blue-600 text-2xl">💼</div>
+                  <div className="text-[#44B6DA] text-2xl">💼</div>
                   <div>
                     <h3 className="font-semibold text-gray-800 text-lg mb-2">
                       What happens next?

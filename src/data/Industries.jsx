@@ -1,5 +1,3 @@
-
-
 export const Industries = [
   {
     id: 1,
@@ -284,7 +282,7 @@ export const countryData = [
     bgImage: "/images/UK.jpg",
     name: "England",
     city: "London",
-    href: "/locations/london",
+    href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d838769.3977618777!2d-0.6158725570166773!3d51.84417590669938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a4422b737215%3A0xedd55757bc88f148!2s17%20Somerville%20Rd%2C%20Romford%20RM6%205BD%2C%20UK!5e1!3m2!1sen!2sbd!4v1766057699963!5m2!1sen!2sbd",
     description:
       "Our London team provides premium recruitment services for financial and professional services sectors.",
     address: "17 Somerville Road, Romford, England, RM6 5BD",
@@ -296,7 +294,7 @@ export const countryData = [
     bgImage: "/images/dubai.jpg",
     name: "United Arab Emirates",
     city: "Dubai",
-    href: "/locations/dubai",
+    href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d927766.4160066493!2d54.046847725710585!3d24.193328757289624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e662ddfe37df1%3A0x3a825c5b3462461d!2sAmideast%20Abu%20Dhabi%20-%20Al%20Nahyan%20Commerical%20Complex!5e1!3m2!1sen!2sbd!4v1766057829250!5m2!1sen!2sbd",
     description:
       "Our Dubai office specializes in connecting talent with multinational organizations across the Middle East.",
     address: "Al Nahyan - E20 04 - Abu Dhabi - United Arab Emirates",
@@ -308,7 +306,7 @@ export const countryData = [
     bgImage: "/images/srl.jpg",
     name: "Sri Lanka",
     city: "Kandy",
-    href: "/locations/sri-lanka",
+    href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1346673.1583121833!2d80.06261002058687!3d7.2961950593021765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3662b97a08b1b%3A0xda41e926669c5de8!2s26%20E%20L%20Senanayake%20Veediya%2C%20Kandy%2020000%2C%20Sri%20Lanka!5e1!3m2!1sen!2sbd!4v1766057873391!5m2!1sen!2sbd",
     description:
       "The Kandy office drives our South Asian operations with a focus on tech talent and startup recruitment.",
     address: "26/2/1 E L Senanayake Veediya, Kandy 20000, Sri Lanka",
@@ -320,7 +318,7 @@ export const countryData = [
     bgImage: "/images/dhaka.jpg",
     name: "Bangladesh",
     city: "Dhaka",
-    href: "/locations/dhaka",
+    href: "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2956771.4388551824!2d90.54226573634709!3d23.69947889937149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m0!4m5!1s0x3755c1da28248e65%3A0x3dbe73c739c2fb09!2sMirpur%20DOHS%20-%20Dhaka%2C%20Road%20No.%206A%2C%20Dhaka!3m2!1d23.835923599999997!2d90.37130359999999!5e1!3m2!1sen!2sbd!4v1766057960318!5m2!1sen!2sbd",
     description:
       "Our Dhaka office specializes in connecting talent with multinational organizations in Bangladesh.",
     address: "H2/1, Road: 2, Block: C, Section: 2, Mirpur DOHS, Dhaka-1216.",
