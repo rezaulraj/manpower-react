@@ -287,7 +287,7 @@ export const countryData = [
       "Our London team provides premium recruitment services for financial and professional services sectors.",
     address: "17 Somerville Road, Romford, England, RM6 5BD",
     phone: "",
-    email: "",
+    email: "Chairman@manpowernet.work",
   },
   {
     id: 2,
@@ -299,7 +299,7 @@ export const countryData = [
       "Our Dubai office specializes in connecting talent with multinational organizations across the Middle East.",
     address: "Al Nahyan - E20 04 - Abu Dhabi - United Arab Emirates",
     phone: "",
-    email: "",
+    email: "Chairman@manpowernet.work",
   },
   {
     id: 3,
@@ -310,8 +310,8 @@ export const countryData = [
     description:
       "The Kandy office drives our South Asian operations with a focus on tech talent and startup recruitment.",
     address: "26/2/1 E L Senanayake Veediya, Kandy 20000, Sri Lanka",
-    phone: "+94 81 1234567",
-    email: "kandy@yourcompany.com",
+    phone: "",
+    email: "Chairman@manpowernet.work",
   },
   {
     id: 4,
@@ -322,7 +322,7 @@ export const countryData = [
     description:
       "Our Dhaka office specializes in connecting talent with multinational organizations in Bangladesh.",
     address: "H2/1, Road: 2, Block: C, Section: 2, Mirpur DOHS, Dhaka-1216.",
-    phone: "+44 20 7946 0958",
-    email: "dhaka@yourcompany.com",
+    phone: "",
+    email: "Chairman@manpowernet.work",
   },
 ];

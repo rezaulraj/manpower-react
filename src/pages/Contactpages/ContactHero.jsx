@@ -156,32 +156,7 @@ export default function ContactHero() {
           className="object-cover w-full h-full"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-[#201D1F] via-[#201D1F]/95 to-transparent" />
-      </motion.div>
-
-      {/* Floating Elements */}
-      <motion.div
-        className="absolute top-20 left-10 z-5"
-        variants={floatingElementsVariants}
-        animate="float"
-      >
-        <div className="w-4 h-4 bg-gradient-to-r from-[#44B6DA] to-yellow-400 rounded-full" />
-      </motion.div>
-      <motion.div
-        className="absolute bottom-20 right-20 z-5"
-        variants={floatingElementsVariants}
-        animate="float"
-        transition={{ delay: 1 }}
-      >
-        <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-[#44B6DA] rounded-full" />
-      </motion.div>
-      <motion.div
-        className="absolute top-1/2 left-1/4 z-5"
-        variants={floatingElementsVariants}
-        animate="float"
-        transition={{ delay: 2 }}
-      >
-        <div className="w-2 h-2 bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] rounded-full" />
+        <div className="absolute inset-0 bg-linear-to-l from-[#201D1F] via-transparent to-[#201D1F]/80" />
       </motion.div>
 
       <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-end w-full px-4">
@@ -258,7 +233,6 @@ export default function ContactHero() {
         </motion.div>
       </div>
 
-      {/* Bottom gradient overlay */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#201D1F] to-transparent z-5" />
     </section>
   );
