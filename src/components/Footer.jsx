@@ -158,7 +158,7 @@ export default function Footer() {
                 <motion.li key={link.href} variants={itemVariants}>
                   <motion.div whileHover={{ x: 5 }}>
                     <Link
-                      href={link.href}
+                      to={link.href}
                       className="flex items-center group text-gray-300 hover:text-white transition-all duration-300"
                     >
                       <FaArrowRight className="mr-3 text-yellow-400 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
@@ -185,7 +185,7 @@ export default function Footer() {
                 <motion.li key={industry.id} variants={itemVariants}>
                   <motion.div whileHover={{ x: 5 }}>
                     <Link
-                      href={industry.href}
+                      to={industry.href}
                       className="flex items-center group text-gray-300 hover:text-white transition-all duration-300"
                     >
                       <FaArrowRight className="mr-3 text-yellow-400 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />

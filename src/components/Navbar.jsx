@@ -213,8 +213,8 @@ export default function Navbar() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="fixed left-0 top-full mt-0 w-screen bg-white shadow-2xl border-t border-gray-100 overflow-hidden z-[9999}"
-                          // style={{ zIndex: 9999 }}
+                          className="fixed left-0 top-full mt-0 w-screen bg-white shadow-2xl border-t border-gray-100 overflow-hidden"
+                          style={{ zIndex: 9999 }}
                           onMouseEnter={() => setHoveredMenu(link.name)}
                           onMouseLeave={() => setHoveredMenu(null)}
                         >
