@@ -145,7 +145,7 @@ export default function AboutHero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed font-ubuntu"
+            className="text-lg md:text-xl text-white/90 leading-relaxed font-ubuntu"
           >
             Step away from the traditional recruitment path and step into a
             career experience that inspires growth, fuels ambition, and shapes
