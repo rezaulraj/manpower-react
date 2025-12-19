@@ -249,7 +249,7 @@ export default function Footer() {
               </div>
               <h4 className="font-bold text-white mb-2">{contact.title}</h4>
               <Link
-                href={contact.href}
+                to={contact.href}
                 className="text-gray-300 hover:text-white transition-colors duration-300 text-sm leading-relaxed group-hover:text-yellow-400"
               >
                 {contact.content}.
