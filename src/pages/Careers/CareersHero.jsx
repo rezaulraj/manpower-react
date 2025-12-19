@@ -422,10 +422,10 @@ export default function CareersHero() {
             className="space-y-8 max-w-3xl"
           >
             <motion.div variants={textVariants} className="space-y-4">
-              <h1 className="text-5xl font-Inter md:text-7xl lg:text-8xl font-bold text-white leading-tight min-h-[1.2em]">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight min-h-[1.2em]">
                 <div className="space-y-2">
                   <div className="flex items-center justify-end">
-                    <span className="text-white font-Inter inline-block">
+                    <span className="bg-linear-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent font-Inter inline-block">
                       {displayText1}
                       {isFirstComplete && !isSecondComplete && (
                         <motion.span
@@ -442,7 +442,7 @@ export default function CareersHero() {
                       variants={whiteTextVariants}
                       initial="hidden"
                       animate={isSecondComplete ? "visible" : "hidden"}
-                      className="text-white font-Inter inline-block"
+                      className="bg-linear-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent font-Inter inline-block"
                     >
                       {displayText2}
                     </motion.span>{" "}
@@ -450,7 +450,7 @@ export default function CareersHero() {
                       variants={gradientTextVariants}
                       initial="hidden"
                       animate={isSecondComplete ? "visible" : "hidden"}
-                      className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent font-Inter inline-block"
+                      className="bg-linear-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent font-Inter inline-block"
                       style={{ backgroundSize: "200% auto" }}
                     >
                       {displayText3}
@@ -458,7 +458,7 @@ export default function CareersHero() {
                         <motion.span
                           variants={cursorVariants}
                           animate="blink"
-                          className="inline-block w-0.5 h-[1em] ml-1 bg-gradient-to-b from-[#44B6DA] to-yellow-400"
+                          className="inline-block w-0.5 h-[1em] ml-1 bg-linear-to-b from-[#44B6DA] to-yellow-400"
                         />
                       )}
                     </motion.span>
@@ -487,7 +487,7 @@ export default function CareersHero() {
               >
                 <a
                   href="/careers#positions"
-                  className="bg-gradient-to-r from-[#44B6DA] to-yellow-400 font-Inter font-bold text-[#201D1F] px-8 py-4 rounded-md text-lg hover:opacity-95 transition-all duration-300 shadow-2xl hover:shadow-xl flex items-center gap-3 group"
+                  className="bg-linear-to-r from-[#44B6DA] to-yellow-400 font-Inter font-bold text-[#201D1F] px-8 py-4 rounded-md text-lg hover:opacity-95 transition-all duration-300 shadow-2xl hover:shadow-xl flex items-center gap-3 group"
                 >
                   Explore Vacancies
                   <motion.span
@@ -511,7 +511,7 @@ export default function CareersHero() {
               >
                 <button
                   onClick={() => setShowForm(true)}
-                  className="bg-transparent font-Inter font-bold text-white border-2 border-[#44B6DA] px-8 py-4 rounded-md text-lg hover:bg-gradient-to-r hover:from-[#44B6DA]/20 hover:to-yellow-400/20 transition-all duration-300 backdrop-blur-sm flex items-center gap-3 group"
+                  className="bg-transparent font-Inter font-bold text-white border-2 border-[#44B6DA] px-8 py-4 rounded-md text-lg hover:bg-linear-to-r hover:from-[#44B6DA]/20 hover:to-yellow-400/20 transition-all duration-300 backdrop-blur-sm flex items-center gap-3 group"
                 >
                   Apply for Future Position
                   <motion.span
@@ -534,7 +534,7 @@ export default function CareersHero() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#201D1F] to-transparent z-5" />
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-[#201D1F] to-transparent z-5" />
       </section>
 
       {showForm && (
@@ -553,7 +553,7 @@ export default function CareersHero() {
             className="bg-white rounded-2xl shadow-2xl border border-gray-200 max-w-4xl w-full max-h-[95vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-gradient-to-r from-[#44B6DA] via-[#44B6DA]/90 to-yellow-400 p-8 rounded-t-2xl">
+            <div className="bg-linear-to-r from-[#44B6DA] via-[#44B6DA]/90 to-yellow-400 p-8 rounded-t-2xl">
               <div className="flex justify-between items-start">
                 <div className="flex-1">
                   <h2 className="text-3xl font-bold text-white mb-3">
@@ -718,7 +718,7 @@ export default function CareersHero() {
                         required
                         accept=".pdf,.doc,.docx,.jpg,.png"
                         onChange={handleFileChange}
-                        className="w-full text-gray-700 file:mr-4 file:py-3 file:px-6 file:rounded-lg file:border-0 file:text-lg file:font-semibold file:bg-gradient-to-r file:from-[#44B6DA] file:to-yellow-400 file:text-gray-900 hover:file:opacity-90 transition-colors cursor-pointer"
+                        className="w-full text-gray-700 file:mr-4 file:py-3 file:px-6 file:rounded-lg file:border-0 file:text-lg file:font-semibold file:bg-linear-to-r file:from-[#44B6DA] file:to-yellow-400 file:text-gray-900 hover:file:opacity-90 transition-colors cursor-pointer"
                       />
                     </div>
 
@@ -726,7 +726,7 @@ export default function CareersHero() {
                       <div className="space-y-3">
                         <div className="w-full bg-gray-200 rounded-full h-3">
                           <motion.div
-                            className="bg-gradient-to-r from-[#44B6DA] to-yellow-400 h-3 rounded-full shadow-md"
+                            className="bg-linear-to-r from-[#44B6DA] to-yellow-400 h-3 rounded-full shadow-md"
                             initial={{ width: 0 }}
                             animate={{ width: `${uploadProgress}%` }}
                             transition={{ duration: 0.5 }}
@@ -763,7 +763,7 @@ export default function CareersHero() {
                     disabled={isSubmitting}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className="w-full bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 py-5 rounded-xl font-bold text-xl shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group"
+                    className="w-full bg-linear-to-r from-[#44B6DA] to-yellow-400 text-gray-900 py-5 rounded-xl font-bold text-xl shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center space-x-3">
@@ -800,7 +800,7 @@ export default function CareersHero() {
                 </div>
               </form>
 
-              <div className="mt-8 p-6 bg-gradient-to-r from-[#44B6DA]/10 to-yellow-400/10 rounded-xl border border-[#44B6DA]/20">
+              <div className="mt-8 p-6 bg-linear-to-r from-[#44B6DA]/10 to-yellow-400/10 rounded-xl border border-[#44B6DA]/20">
                 <div className="flex items-start space-x-4">
                   <div className="text-[#44B6DA] text-2xl">💼</div>
                   <div>
