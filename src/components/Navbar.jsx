@@ -153,7 +153,7 @@ export default function Navbar() {
                         relative group/navitem
                         ${
                           isActive
-                            ? "text-blue-600"
+                            ? "text-blue-950"
                             : "text-gray-700 hover:text-blue-600"
                         }
                       `}
@@ -164,7 +164,7 @@ export default function Navbar() {
                             relative p-2 rounded-lg transition-all duration-300 z-20
                             ${
                               isActive
-                                ? "bg-blue-50 text-blue-600"
+                                ? "bg-blue-50 text-blue-950"
                                 : "bg-gray-50 text-gray-600 group-hover/navitem:bg-blue-50 group-hover/navitem:text-blue-600"
                             }
                           `}
@@ -197,7 +197,7 @@ export default function Navbar() {
                       <div
                         className={`
                         absolute bottom-0 left-1/2 transform -translate-x-1/2
-                        w-0 h-0.5 bg-blue-500
+                        w-0 h-0.5 bg-blue-950
                         transition-all duration-300
                         group-hover/navitem:w-3/4
                         ${isActive ? "w-3/4" : ""}
