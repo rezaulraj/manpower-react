@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 export default function PartnersHero() {
   const [displayText, setDisplayText] = useState("");
@@ -102,92 +103,121 @@ export default function PartnersHero() {
   };
 
   return (
-    <section className="relative py-44 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-      <motion.div
-        initial={{ scale: 1.05, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.7 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute inset-0 z-0"
-      >
-        <img
-          src="/images/bannerpatner.jpg"
-          alt="Partners Hero"
-          className="object-cover w-full h-full"
-          priority
+    <>
+      <Helmet>
+        <title>Partner with Us | Global Talent Solutions</title>
+        <meta
+          name="description"
+          content="Join our global partner network to connect qualified talent from around the world. Collaborate with us to source and deliver top talent solutions."
         />
-
-        <div className="absolute inset-0 bg-gradient-to-l from-gray-900 via-gray-900/95 to-transparent" />
-      </motion.div>
-
-      <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-end w-full px-4">
+        <meta
+          property="og:title"
+          content="Partner with Us | Global Talent Solutions"
+        />
+        <meta
+          property="og:description"
+          content="Join our global partner network to connect qualified talent from around the world. Collaborate with us to source and deliver top talent solutions."
+        />
+        <meta property="og:image" content="/images/bannerpatner.jpg" />
+        <meta
+          property="og:url"
+          content="https://manpowernet.work/partnership"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://manpowernet.work/partnership"
+        />
+        <meta name="twitter:image" content="/images/bannerpatner.jpg" />
+      </Helmet>
+      <section className="relative py-44 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-8 max-w-4xl text-right"
+          initial={{ scale: 1.05, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.7 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
         >
-          <motion.div variants={textVariants} className="space-y-4">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-ubuntu font-bold text-white leading-tight min-h-[1.2em]">
-              <div className="relative inline-block">
-                Join Our Global
-                <br />
-                <span className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent text-right">
-                  {displayText}
-                  {isComplete && (
-                    <motion.span
-                      variants={cursorVariants}
-                      animate="blink"
-                      className="inline-block w-[2px] h-[1em] ml-1 bg-gradient-to-b from-yellow-400 to-red-500"
-                    />
-                  )}
-                </span>
-              </div>
-            </h1>
-          </motion.div>
+          <img
+            src="/images/bannerpatner.jpg"
+            alt="Partners Hero"
+            className="object-cover w-full h-full"
+            priority
+          />
 
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-xl text-white/90  leading-relaxed font-ubuntu text-right"
-          >
-            We are always seeking trusted partners to help source and <br />{" "}
-            connect qualified talent from across the globe.
-          </motion.p>
-
-          <motion.div variants={itemVariants} className="text-right">
-            <motion.a
-              href="/contact?type=partner"
-              variants={buttonVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200 font-ubuntu"
-            >
-              Contact as Partner
-              <motion.svg
-                animate={{ x: [0, 3, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </motion.svg>
-            </motion.a>
-          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-l from-gray-900 via-gray-900/95 to-transparent" />
         </motion.div>
-      </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-5" />
-    </section>
+        <div className="container mx-auto relative z-10 h-full flex flex-col justify-center items-end w-full px-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-8 max-w-4xl text-right"
+          >
+            <motion.div variants={textVariants} className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-ubuntu font-bold text-white leading-tight min-h-[1.2em]">
+                <div className="relative inline-block">
+                  Join Our Global
+                  <br />
+                  <span className="bg-gradient-to-r from-[#44B6DA] via-yellow-400 to-[#44B6DA] bg-[length:200%_auto] bg-clip-text text-transparent text-right">
+                    {displayText}
+                    {isComplete && (
+                      <motion.span
+                        variants={cursorVariants}
+                        animate="blink"
+                        className="inline-block w-[2px] h-[1em] ml-1 bg-gradient-to-b from-yellow-400 to-red-500"
+                      />
+                    )}
+                  </span>
+                </div>
+              </h1>
+            </motion.div>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-lg md:text-xl text-white/90  leading-relaxed font-ubuntu text-right"
+            >
+              We are always seeking trusted partners to help source and <br />{" "}
+              connect qualified talent from across the globe.
+            </motion.p>
+
+            <motion.div variants={itemVariants} className="text-right">
+              <motion.a
+                href="/contact?type=partner"
+                variants={buttonVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#44B6DA] to-yellow-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-200 font-ubuntu"
+              >
+                Contact as Partner
+                <motion.svg
+                  animate={{ x: [0, 3, 0] }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </motion.svg>
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-5" />
+      </section>
+    </>
   );
 }

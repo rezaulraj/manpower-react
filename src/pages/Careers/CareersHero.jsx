@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 export default function CareersHero() {
   const [displayText1, setDisplayText1] = useState("");
@@ -393,6 +394,47 @@ export default function CareersHero() {
 
   return (
     <>
+      <Helmet>
+        <title>Careers at Manpower - Build a Meaningful Career</title>
+        <meta
+          name="description"
+          content="Join Manpower and build a career that matters. Explore exciting job opportunities, grow your skills, and make a difference with a leading recruitment agency."
+        />
+        <meta
+          name="keywords"
+          content="Careers, Jobs, Recruitment, Manpower, Job Opportunities, Career Growth, Employment, Staffing Agency"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Manpower Network" />
+        <meta
+          property="og:title"
+          content="Careers at Manpower - Build a Meaningful Career"
+        />
+        <meta
+          property="og:description"
+          content="Join Manpower and build a career that matters. Explore exciting job opportunities, grow your skills, and make a difference with a leading recruitment agency."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://manpowernet.work/careers" />
+        <meta
+          property="og:image"
+          content="https://manpowernet.work/images/careersbanner.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Careers at Manpower - Build a Meaningful Career"
+        />
+        <meta
+          name="twitter:description"
+          content="Join Manpower and build a career that matters. Explore exciting job opportunities, grow your skills, and make a difference with a leading recruitment agency."
+        />
+        <meta
+          name="twitter:image"
+          content="https://manpowernet.work/images/careersbanner.jpg"
+        />
+      </Helmet>
       <section className="relative bg-[#201D1F] overflow-hidden py-32">
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
