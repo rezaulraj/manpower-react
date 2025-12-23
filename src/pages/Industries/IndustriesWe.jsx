@@ -58,7 +58,7 @@ export default function IndustriesWe() {
   return (
     <section id="solutions" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-linear-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50"></div>
 
         <svg
           className="absolute inset-0 w-full h-full"

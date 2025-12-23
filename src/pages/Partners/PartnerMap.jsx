@@ -70,32 +70,6 @@ export default function PartnerMap() {
     },
   };
 
-  const iconVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0,
-      rotate: -180,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: {
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-    hover: {
-      scale: 1.2,
-      rotate: 360,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const handleCountryClick = (country) => {
     setSelectedCountry(country);
   };
