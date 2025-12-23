@@ -251,7 +251,7 @@ export default function IndustriesWe() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto font-Inter leading-relaxed"
+            className="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto font-Inter leading-relaxed"
           >
             We provide innovative, tailored solutions across a wide range of
             industries. From healthcare and finance to technology and retail,

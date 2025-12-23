@@ -11,6 +11,8 @@ import {
   FaGlobeAmericas,
   FaUsers,
   FaPinterest,
+  FaInstagram,
+  FaYoutube,
 } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi";
 import { FaX } from "react-icons/fa6";
@@ -38,7 +40,7 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: FaX,
-      href: "https://x.com/Manpower7912871",
+      href: "https://x.com/ManpowerNet01",
       color: "hover:text-sky-400",
     },
     {
@@ -48,8 +50,18 @@ export default function Footer() {
     },
     {
       icon: FaPinterest,
-      href: "https://www.pinterest.com/manpowernet/",
+      href: "https://www.pinterest.com/manpowernetwork/",
       color: "hover:text-pink-500",
+    },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/manpowernetwork01/",
+      color: "hover:text-purple-500",
+    },
+    {
+      icon: FaYoutube,
+      href: "https://www.youtube.com/@ManpowerNetwork01",
+      color: "hover:text-red-500",
     },
   ];
 
